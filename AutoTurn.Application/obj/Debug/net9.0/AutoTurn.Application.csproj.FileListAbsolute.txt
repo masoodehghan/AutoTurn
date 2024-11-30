@@ -1,0 +1,15 @@
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Application\bin\Debug\net9.0\AutoTurn.Application.deps.json
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Application\bin\Debug\net9.0\AutoTurn.Application.dll
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Application\bin\Debug\net9.0\AutoTurn.Application.pdb
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Application\bin\Debug\net9.0\AutoTurn.Models.dll
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Application\bin\Debug\net9.0\AutoTurn.Models.pdb
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Application\obj\Debug\net9.0\AutoTurn.Application.csproj.AssemblyReference.cache
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Application\obj\Debug\net9.0\AutoTurn.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Application\obj\Debug\net9.0\AutoTurn.Application.AssemblyInfoInputs.cache
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Application\obj\Debug\net9.0\AutoTurn.Application.AssemblyInfo.cs
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Application\obj\Debug\net9.0\AutoTurn.Application.csproj.CoreCompileInputs.cache
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Application\obj\Debug\net9.0\AutoTurn.24EBD4FC.Up2Date
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Application\obj\Debug\net9.0\AutoTurn.Application.dll
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Application\obj\Debug\net9.0\refint\AutoTurn.Application.dll
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Application\obj\Debug\net9.0\AutoTurn.Application.pdb
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Application\obj\Debug\net9.0\ref\AutoTurn.Application.dll

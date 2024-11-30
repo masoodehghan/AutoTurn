@@ -1,0 +1,6 @@
+@AutoTurn.Api_HostAddress = http://localhost:5165
+
+GET {{AutoTurn.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

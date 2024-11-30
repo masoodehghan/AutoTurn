@@ -1,0 +1,17 @@
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Infrustructure\bin\Debug\net9.0\AutoTurn.Infrustructure.deps.json
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Infrustructure\bin\Debug\net9.0\AutoTurn.Infrustructure.dll
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Infrustructure\bin\Debug\net9.0\AutoTurn.Infrustructure.pdb
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Infrustructure\bin\Debug\net9.0\AutoTurn.Models.dll
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Infrustructure\bin\Debug\net9.0\AutoTurn.Models.pdb
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Infrustructure\obj\Debug\net9.0\AutoTurn.Infrustructure.csproj.AssemblyReference.cache
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Infrustructure\obj\Debug\net9.0\AutoTurn.Infrustructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Infrustructure\obj\Debug\net9.0\AutoTurn.Infrustructure.AssemblyInfoInputs.cache
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Infrustructure\obj\Debug\net9.0\AutoTurn.Infrustructure.AssemblyInfo.cs
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Infrustructure\obj\Debug\net9.0\AutoTurn.Infrustructure.csproj.CoreCompileInputs.cache
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Infrustructure\obj\Debug\net9.0\AutoTurn.B7AFE051.Up2Date
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Infrustructure\obj\Debug\net9.0\AutoTurn.Infrustructure.dll
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Infrustructure\obj\Debug\net9.0\refint\AutoTurn.Infrustructure.dll
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Infrustructure\obj\Debug\net9.0\AutoTurn.Infrustructure.pdb
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Infrustructure\obj\Debug\net9.0\ref\AutoTurn.Infrustructure.dll
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Infrustructure\bin\Debug\net9.0\AutoTurn.Application.dll
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Infrustructure\bin\Debug\net9.0\AutoTurn.Application.pdb

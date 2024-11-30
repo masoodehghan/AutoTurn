@@ -1,0 +1,14 @@
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Models\bin\Debug\net9.0\AutoTurn.Models.deps.json
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Models\bin\Debug\net9.0\AutoTurn.Models.runtimeconfig.json
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Models\bin\Debug\net9.0\AutoTurn.Models.dll
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Models\bin\Debug\net9.0\AutoTurn.Models.pdb
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Models\obj\Debug\net9.0\AutoTurn.Models.csproj.AssemblyReference.cache
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Models\obj\Debug\net9.0\AutoTurn.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Models\obj\Debug\net9.0\AutoTurn.Models.AssemblyInfoInputs.cache
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Models\obj\Debug\net9.0\AutoTurn.Models.AssemblyInfo.cs
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Models\obj\Debug\net9.0\AutoTurn.Models.csproj.CoreCompileInputs.cache
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Models\obj\Debug\net9.0\AutoTurn.Models.dll
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Models\obj\Debug\net9.0\refint\AutoTurn.Models.dll
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Models\obj\Debug\net9.0\AutoTurn.Models.pdb
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Models\obj\Debug\net9.0\AutoTurn.Models.genruntimeconfig.cache
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Models\obj\Debug\net9.0\ref\AutoTurn.Models.dll

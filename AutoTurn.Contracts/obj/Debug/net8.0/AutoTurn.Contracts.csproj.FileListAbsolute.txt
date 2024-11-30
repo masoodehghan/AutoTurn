@@ -1,0 +1,11 @@
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Contracts\bin\Debug\net8.0\AutoTurn.Contracts.deps.json
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Contracts\bin\Debug\net8.0\AutoTurn.Contracts.dll
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Contracts\bin\Debug\net8.0\AutoTurn.Contracts.pdb
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Contracts\obj\Debug\net8.0\AutoTurn.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Contracts\obj\Debug\net8.0\AutoTurn.Contracts.AssemblyInfoInputs.cache
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Contracts\obj\Debug\net8.0\AutoTurn.Contracts.AssemblyInfo.cs
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Contracts\obj\Debug\net8.0\AutoTurn.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Contracts\obj\Debug\net8.0\AutoTurn.Contracts.dll
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Contracts\obj\Debug\net8.0\refint\AutoTurn.Contracts.dll
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Contracts\obj\Debug\net8.0\AutoTurn.Contracts.pdb
+C:\Users\masoo\source\repos\AutoTurn\AutoTurn.Contracts\obj\Debug\net8.0\ref\AutoTurn.Contracts.dll
