@@ -8,12 +8,12 @@ namespace AutoTurn.Application.Authentication.Queries;
 
 public record UpdateUserQuery(
     string? Id,
-    string Username,
-    string FirstName,
-    string LastName,
-    string Email,
-    string Password,
-    bool IsAdmin
+    string? Username,
+    string? FirstName,
+    string? LastName,
+    string? Email,
+    string? Password,
+    bool? IsAdmin
    
     ) : IRequest<ErrorOr<AuthenticationResult>>
 {

@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/auth/register": {
+    "/api/auth/register": {
       "post": {
         "tags": [
           "Authentication"
@@ -36,7 +36,7 @@
         }
       }
     },
-    "/auth/login": {
+    "/api/auth/login": {
       "post": {
         "tags": [
           "Authentication"
@@ -67,7 +67,7 @@
         }
       }
     },
-    "/auth/update": {
+    "/api/auth/update": {
       "put": {
         "tags": [
           "Authentication"
@@ -98,7 +98,132 @@
         }
       }
     },
-    "/provinces/{Id}/{userId}": {
+    "/api/Office": {
+      "post": {
+        "tags": [
+          "Office"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OfficeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OfficeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/OfficeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Office"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Office/{id}": {
+      "put": {
+        "tags": [
+          "Office"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateOfficeQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateOfficeQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateOfficeQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Office/{Id}": {
+      "delete": {
+        "tags": [
+          "Office"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteOfficeQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteOfficeQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteOfficeQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/provinces/{Id}/{userId}": {
       "patch": {
         "tags": [
           "Province"
@@ -132,6 +257,24 @@
   },
   "components": {
     "schemas": {
+      "AddressCommand": {
+        "type": "object",
+        "properties": {
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "street": {
+            "type": "string",
+            "nullable": true
+          },
+          "postalCode": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Claim": {
         "type": "object",
         "properties": {
@@ -247,6 +390,19 @@
         },
         "additionalProperties": false
       },
+      "DeleteOfficeQuery": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "authUser": {
+            "$ref": "#/components/schemas/ClaimsPrincipal"
+          }
+        },
+        "additionalProperties": false
+      },
       "IIdentity": {
         "type": "object",
         "properties": {
@@ -281,6 +437,34 @@
         },
         "additionalProperties": false
       },
+      "OfficeCommand": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "adminId": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "provinceId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "address": {
+            "$ref": "#/components/schemas/AddressCommand"
+          },
+          "authUser": {
+            "$ref": "#/components/schemas/ClaimsPrincipal"
+          }
+        },
+        "additionalProperties": false
+      },
       "RegisterCommand": {
         "type": "object",
         "properties": {
@@ -303,6 +487,35 @@
           "password": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateOfficeQuery": {
+        "type": "object",
+        "properties": {
+          "adminId": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "provinceId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "address": {
+            "$ref": "#/components/schemas/AddressCommand"
+          },
+          "authUser": {
+            "$ref": "#/components/schemas/ClaimsPrincipal"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -335,7 +548,8 @@
             "nullable": true
           },
           "isAdmin": {
-            "type": "boolean"
+            "type": "boolean",
+            "nullable": true
           },
           "authUser": {
             "$ref": "#/components/schemas/ClaimsPrincipal"

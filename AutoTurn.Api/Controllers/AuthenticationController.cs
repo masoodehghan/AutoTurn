@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace AutoTurn.Contracts.Controllers;
 
-[Route("auth")]
+[Route("api/auth")]
 public class AuthenticationController : ApiController
 {
 
@@ -18,7 +18,7 @@ public class AuthenticationController : ApiController
         _mediatr = mediatr;
     }
 
-    [Authorize(Roles ="SuperAdmin,Admin")]
+    
     [HttpPost("register")]
     public async Task<IActionResult> Register(RegisterCommand request)
     {

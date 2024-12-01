@@ -2,7 +2,7 @@
   {
     "ContainingType": "AutoTurn.Contracts.Controllers.AuthenticationController",
     "Method": "Login",
-    "RelativePath": "auth/login",
+    "RelativePath": "api/auth/login",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -18,7 +18,7 @@
   {
     "ContainingType": "AutoTurn.Contracts.Controllers.AuthenticationController",
     "Method": "Register",
-    "RelativePath": "auth/register",
+    "RelativePath": "api/auth/register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -34,7 +34,7 @@
   {
     "ContainingType": "AutoTurn.Contracts.Controllers.AuthenticationController",
     "Method": "UpdateUser",
-    "RelativePath": "auth/update",
+    "RelativePath": "api/auth/update",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -48,9 +48,77 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AutoTurn.Api.Controllers.OfficeController",
+    "Method": "Post",
+    "RelativePath": "api/Office",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AutoTurn.Application.Offices.Commands.OfficeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AutoTurn.Api.Controllers.OfficeController",
+    "Method": "Get",
+    "RelativePath": "api/Office",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AutoTurn.Api.Controllers.OfficeController",
+    "Method": "Update",
+    "RelativePath": "api/Office/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AutoTurn.Application.Offices.Queries.UpdateOfficeQuery.UpdateOfficeQuery",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AutoTurn.Api.Controllers.OfficeController",
+    "Method": "Delete",
+    "RelativePath": "api/Office/{Id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AutoTurn.Application.Offices.Queries.DeleteOfficeQuery.DeleteOfficeQuery",
+        "IsRequired": true
+      },
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AutoTurn.Api.Controllers.ProvinceController",
     "Method": "Put",
-    "RelativePath": "provinces/{Id}/{userId}",
+    "RelativePath": "api/provinces/{Id}/{userId}",
     "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,

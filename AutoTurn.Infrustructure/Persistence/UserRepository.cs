@@ -25,6 +25,12 @@ namespace AutoTurn.Infrustructure.Persistence
 
         }
 
+        public async Task<User?> GetUserByIdWithProvinceAsync(string Id)
+        {
+            return await _context.Users.Include(s => s.Province)
+                .SingleOrDefaultAsync(u => u.Id == Id);
+        }
+
         public async  Task<User?> GetUserByUserNameAsync(string userName)
         {
           return await _context.Users.SingleOrDefaultAsync(u => u.UserName == userName);

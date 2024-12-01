@@ -10,5 +10,6 @@ public class User : IdentityUser
     public bool IsSuperAdmin { get; set;  } = false;
     public Province? Province {  get; set; }
     public Office? Office { get; set; }
+    public int? OfficeId { get; set; }
 
 }

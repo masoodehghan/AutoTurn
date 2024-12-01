@@ -47,9 +47,9 @@ public class UpdateUserQueryHandler : IRequestHandler<UpdateUserQuery, ErrorOr<A
         user.LastName = request.LastName ?? user.LastName;
         user.Email = request.Email ?? user.Email;
 
-        if (request.AuthUser!.IsInRole("SuperAdmin") && request.IsAdmin)
+        if (request.AuthUser!.IsInRole("SuperAdmin") && request.IsAdmin is not null)
         {
-            user.IsAdmin = request.IsAdmin;
+            user.IsAdmin = request.IsAdmin ?? false;
         }
 
         var result = await _userManager.UpdateAsync(user);

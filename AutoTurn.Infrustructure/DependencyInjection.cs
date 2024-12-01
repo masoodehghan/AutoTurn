@@ -1,6 +1,7 @@
 ﻿using AutoTurn.Application.Interfaces;
 using AutoTurn.Application.Interfaces.Repository;
 using AutoTurn.Infrastructure.Authentication;
+using AutoTurn.Infrastructure.Persistence;
 using AutoTurn.Infrastructure.Services;
 using AutoTurn.Infrustructure.Persistence;
 using Microsoft.Extensions.Configuration;
@@ -19,7 +20,9 @@ public static class DependencyInjection
 
 
         services.AddScoped<IUserRepository, UserRepository>();
-        
+        services.AddScoped<IOfficeRepository, OfficeRepository>();
+
+
         services.Configure<JwtSettings>(configuration.GetSection(JwtSettings.SectionName));
 
         configuration.GetSection(JwtSettings.SectionName);

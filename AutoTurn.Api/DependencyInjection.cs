@@ -1,12 +1,15 @@
 ﻿using AutoTurn.Api.Authorization;
 using AutoTurn.Infrastructure.Authentication;
 using AutoTurn.Models;
+using Mapster;
+using MapsterMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Reflection;
 using System.Text;
 
 namespace AutoTurn.Api;
@@ -21,8 +24,21 @@ public static class DependencyInjection
         AddAuthentication(services, configuration);
         AddAuthorization(services);
         AddSwagger(services);
+        AddMapper(services);
         services.AddEndpointsApiExplorer();
         services.AddControllers();
+
+        return services;
+    }
+
+    private static IServiceCollection AddMapper(this IServiceCollection services)
+    {
+        var config = TypeAdapterConfig.GlobalSettings;
+        config.Scan(Assembly.GetExecutingAssembly());
+
+        services.AddSingleton(config);
+        services.AddScoped<IMapper, ServiceMapper>();
+
 
         return services;
     }
