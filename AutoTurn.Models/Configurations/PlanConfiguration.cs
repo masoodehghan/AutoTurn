@@ -8,7 +8,6 @@ public class PlanConfiguration : IEntityTypeConfiguration<Plan>
 {
     public void Configure(EntityTypeBuilder<Plan> builder)
     {
-        builder.HasKey(p => p.Id);
         builder.Property<int>(p => p.Id).ValueGeneratedNever();
         builder.Property(p => p.Name).HasMaxLength(50);
 

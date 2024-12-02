@@ -50,9 +50,21 @@ Content-Type: application/json
 }
 ###
 
-DELETE {{AutoTurn.Api_HostAddress}}/office/101
+DELETE {{AutoTurn.Api_HostAddress}}/api/office/12
 Accept: application/json
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {}
+
+###
+Post {{AutoTurn.Api_HostAddress}}/151/users
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "UserIds": [
+    "7c25641b-6d69-44fb-9290-8ea1c8d0f3d8"
+  ]
+}    

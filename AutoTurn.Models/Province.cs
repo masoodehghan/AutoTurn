@@ -6,7 +6,6 @@ public class Province
     public string Name { get; set; }
     public User? Admin { get; set; }
     public string? AdminId { get; set; }
-
     public ICollection<Office> offices { get; set; } = new List<Office>();
 
 }

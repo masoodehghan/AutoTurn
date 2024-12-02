@@ -10,15 +10,15 @@ public record OfficeResponse(
     int Id,
     string Name,
     ProvinceResponse Province,
-    List<PlanSettingResponse> PlanSetting,
+    List<PlanSettingResponse> PlanSettings,
     AddressResponse Address
     );
 
 
 
 public record PlanSettingResponse(
-    string? PlanStartTime,
-    string? PlanEndTime,
+    string? StartTime,
+    string? EndTime,
     int? PlanCapacity
     );
 

@@ -10,6 +10,6 @@ public class OfficeConfiguration : IEntityTypeConfiguration<Office>
         builder.Property<int>(o => o.Id).ValueGeneratedNever();
         builder.OwnsOne(s => s.Address).WithOwner();
         builder.Property<string>(o => o.Name).IsRequired().HasMaxLength(50);
-        builder.OwnsMany(o => o.planSettings).WithOwner();
+        builder.OwnsMany(o => o.PlanSettings).WithOwner();
     }
 }

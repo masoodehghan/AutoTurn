@@ -20,6 +20,11 @@ public class AutoTurnDbContext : IdentityDbContext<User>
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
+
+        builder.Entity<Office>().HasQueryFilter(f => f.IsActive);
+        builder.Entity<Plan>().HasQueryFilter(f => f.IsActive);
+        builder.Entity<Turn>().HasQueryFilter(f => f.IsActive);
+
         builder.ApplyConfigurationsFromAssembly(typeof(AutoTurnDbContext).Assembly);
         base.OnModelCreating(builder);
     }

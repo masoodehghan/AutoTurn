@@ -73,7 +73,7 @@ namespace AutoTurn.Models.Migrations
                         .IsUnique()
                         .HasFilter("[YektaCode] IS NOT NULL");
 
-                    b.ToTable("Foreigns");
+                    b.ToTable("Foreigns", (string)null);
                 });
 
             modelBuilder.Entity("AutoTurn.Models.Office", b =>
@@ -99,7 +99,7 @@ namespace AutoTurn.Models.Migrations
 
                     b.HasIndex("ProvinceId");
 
-                    b.ToTable("Offices");
+                    b.ToTable("Offices", (string)null);
                 });
 
             modelBuilder.Entity("AutoTurn.Models.Plan", b =>
@@ -119,6 +119,9 @@ namespace AutoTurn.Models.Migrations
 
                     b.Property<int>("DuarationMinute")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("IsTranferAvailable")
                         .HasColumnType("bit");
@@ -145,7 +148,7 @@ namespace AutoTurn.Models.Migrations
 
                     b.HasIndex("PlanId");
 
-                    b.ToTable("Plans");
+                    b.ToTable("Plans", (string)null);
                 });
 
             modelBuilder.Entity("AutoTurn.Models.Province", b =>
@@ -170,7 +173,7 @@ namespace AutoTurn.Models.Migrations
                         .IsUnique()
                         .HasFilter("[AdminId] IS NOT NULL");
 
-                    b.ToTable("Provinces");
+                    b.ToTable("Provinces", (string)null);
 
                     b.HasData(
                         new
@@ -212,7 +215,7 @@ namespace AutoTurn.Models.Migrations
                     b.Property<int>("ForeignId")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsDeleted")
+                    b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
                     b.Property<int>("OfficeId")
@@ -235,7 +238,7 @@ namespace AutoTurn.Models.Migrations
 
                     b.HasIndex("PlanId");
 
-                    b.ToTable("Turns");
+                    b.ToTable("Turns", (string)null);
                 });
 
             modelBuilder.Entity("AutoTurn.Models.User", b =>
@@ -336,7 +339,7 @@ namespace AutoTurn.Models.Migrations
 
                     b.HasIndex("OfficesId");
 
-                    b.ToTable("ForeignOffice");
+                    b.ToTable("ForeignOffice", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -484,7 +487,7 @@ namespace AutoTurn.Models.Migrations
 
                     b.HasIndex("PlansId");
 
-                    b.ToTable("OfficePlan");
+                    b.ToTable("OfficePlan", (string)null);
                 });
 
             modelBuilder.Entity("AutoTurn.Models.Foreign", b =>
@@ -512,7 +515,7 @@ namespace AutoTurn.Models.Migrations
 
                             b1.HasKey("ForeignId");
 
-                            b1.ToTable("Foreigns");
+                            b1.ToTable("Foreigns", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("ForeignId");
@@ -556,7 +559,7 @@ namespace AutoTurn.Models.Migrations
 
                             b1.HasKey("OfficeId");
 
-                            b1.ToTable("Offices");
+                            b1.ToTable("Offices", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("OfficeId");
@@ -587,7 +590,7 @@ namespace AutoTurn.Models.Migrations
 
                             b1.HasKey("OfficeId", "Id");
 
-                            b1.ToTable("PlanSetting");
+                            b1.ToTable("PlanSetting", (string)null);
 
                             b1.WithOwner()
                                 .HasForeignKey("OfficeId");

@@ -33,7 +33,7 @@ namespace AutoTurn.Infrustructure.Persistence
 
         public async  Task<User?> GetUserByUserNameAsync(string userName)
         {
-          return await _context.Users.SingleOrDefaultAsync(u => u.UserName == userName);
+            return await _context.Users.FirstOrDefaultAsync(o => o.UserName == userName);
         }
     }
 }

@@ -2,14 +2,16 @@
 
 namespace AutoTurn.Models;
 
-public class Plan
+public class Plan : SoftDelete
 {
     public int Id { get; set; }
     public string Name { get; set; }
 
     public PlanType PlanType { get; set; }
     public int Capacity { get; set; } = 100;
-    public bool IsTranferAvailable { get; set; }
+    public bool IsTranferAvailable { get; set; } = true;
+    //public bool IsActive { get; set; } = true;
+
     public int MaxDeleteCount { get; set; }
     public int? DayBetween {  get; set; }
 

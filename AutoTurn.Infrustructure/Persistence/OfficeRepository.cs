@@ -31,6 +31,21 @@ public class OfficeRepository : IOfficeRepository
         return await _context.Offices.Include(o => o.Province).ToListAsync();
     }
 
+    public async Task<ICollection<Office>> GetAllOfficeAsync(
+        int? ProvinceId = null
+        )
+    {
+
+        IQueryable<Office> offices = _context.Offices.Include(s => s.Province);
+
+        if (ProvinceId is not null)
+        {
+            offices = offices.Where(s => s.ProvinceId == ProvinceId);
+        }
+
+        return await offices.ToListAsync();
+    }
+
     public async Task<Office?> GetOfficeByIdAsync(int id)
     {
        return await _context.Offices.Include(o=>o.Province).SingleOrDefaultAsync(o =>  o.Id == id);
