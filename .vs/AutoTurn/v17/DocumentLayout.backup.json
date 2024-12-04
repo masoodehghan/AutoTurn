@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "F:\\dev\\AutoTurn\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|f:\\dev\\autoturn\\autoturn.application\\offices\\queries\\removeofficeuserquery\\addofficeuserqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|solutionrelative:autoturn.application\\offices\\queries\\removeofficeuserquery\\addofficeuserqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|f:\\dev\\autoturn\\autoturn.application\\offices\\queries\\updateofficequery\\updateofficequeryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|solutionrelative:autoturn.application\\offices\\queries\\updateofficequery\\updateofficequeryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|f:\\dev\\autoturn\\autoturn.application\\offices\\queries\\removeofficeuserquery\\removeofficeuserquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|solutionrelative:autoturn.application\\offices\\queries\\removeofficeuserquery\\removeofficeuserquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|f:\\dev\\autoturn\\autoturn.application\\offices\\queries\\addofficeuserquery\\addofficeuserquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|solutionrelative:autoturn.application\\offices\\queries\\addofficeuserquery\\addofficeuserquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D13FB5D6-466C-4567-A50B-7D783FEFD61B}|AutoTurn.Api\\AutoTurn.Api.csproj|f:\\dev\\autoturn\\autoturn.api\\controllers\\officecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D13FB5D6-466C-4567-A50B-7D783FEFD61B}|AutoTurn.Api\\AutoTurn.Api.csproj|solutionrelative:autoturn.api\\controllers\\officecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|f:\\dev\\autoturn\\autoturn.application\\offices\\commands\\officecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|solutionrelative:autoturn.application\\offices\\commands\\officecommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|f:\\dev\\autoturn\\autoturn.application\\offices\\commands\\officecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|solutionrelative:autoturn.application\\offices\\commands\\officecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,36 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AddOfficeUserQueryHandler.cs",
-              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\RemoveOfficeUserQuery\\AddOfficeUserQueryHandler.cs",
-              "RelativeDocumentMoniker": "AutoTurn.Application\\Offices\\Queries\\RemoveOfficeUserQuery\\AddOfficeUserQueryHandler.cs",
-              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\RemoveOfficeUserQuery\\AddOfficeUserQueryHandler.cs",
-              "RelativeToolTip": "AutoTurn.Application\\Offices\\Queries\\RemoveOfficeUserQuery\\AddOfficeUserQueryHandler.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAIAxwDAAAAAAAAAAAAAAAA==",
+              "Title": "UpdateOfficeQueryHandler.cs",
+              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\UpdateOfficeQuery\\UpdateOfficeQueryHandler.cs",
+              "RelativeDocumentMoniker": "AutoTurn.Application\\Offices\\Queries\\UpdateOfficeQuery\\UpdateOfficeQueryHandler.cs",
+              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\UpdateOfficeQuery\\UpdateOfficeQueryHandler.cs",
+              "RelativeToolTip": "AutoTurn.Application\\Offices\\Queries\\UpdateOfficeQuery\\UpdateOfficeQueryHandler.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAywCUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T13:38:32.243Z",
+              "WhenOpened": "2024-12-04T05:02:25.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OfficeCommand.cs",
+              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Commands\\OfficeCommand.cs",
+              "RelativeDocumentMoniker": "AutoTurn.Application\\Offices\\Commands\\OfficeCommand.cs",
+              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Commands\\OfficeCommand.cs",
+              "RelativeToolTip": "AutoTurn.Application\\Offices\\Commands\\OfficeCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T04:41:40.674Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OfficeCommandHandler.cs",
+              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Commands\\OfficeCommandHandler.cs",
+              "RelativeDocumentMoniker": "AutoTurn.Application\\Offices\\Commands\\OfficeCommandHandler.cs",
+              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Commands\\OfficeCommandHandler.cs",
+              "RelativeToolTip": "AutoTurn.Application\\Offices\\Commands\\OfficeCommandHandler.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAIA2wB0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T07:23:14.384Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RemoveOfficeUserQuery.cs",
-              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\RemoveOfficeUserQuery\\RemoveOfficeUserQuery.cs",
-              "RelativeDocumentMoniker": "AutoTurn.Application\\Offices\\Queries\\RemoveOfficeUserQuery\\RemoveOfficeUserQuery.cs",
-              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\RemoveOfficeUserQuery\\RemoveOfficeUserQuery.cs",
-              "RelativeToolTip": "AutoTurn.Application\\Offices\\Queries\\RemoveOfficeUserQuery\\RemoveOfficeUserQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
+              "Title": "AddOfficeUserQuery.cs",
+              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\AddOfficeUserQuery\\AddOfficeUserQuery.cs",
+              "RelativeDocumentMoniker": "AutoTurn.Application\\Offices\\Queries\\AddOfficeUserQuery\\AddOfficeUserQuery.cs",
+              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\AddOfficeUserQuery\\AddOfficeUserQuery.cs",
+              "RelativeToolTip": "AutoTurn.Application\\Offices\\Queries\\AddOfficeUserQuery\\AddOfficeUserQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T13:38:05.959Z",
+              "WhenOpened": "2024-12-03T07:22:50.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OfficeController.cs",
+              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Api\\Controllers\\OfficeController.cs",
+              "RelativeDocumentMoniker": "AutoTurn.Api\\Controllers\\OfficeController.cs",
+              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Api\\Controllers\\OfficeController.cs",
+              "RelativeToolTip": "AutoTurn.Api\\Controllers\\OfficeController.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAIAxwC0AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T19:47:17.2Z",
               "EditorCaption": ""
             }
           ]

@@ -5,15 +5,15 @@ using ErrorOr;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 
-namespace AutoTurn.Application.Offices.Queries.OfficePlanSettingQuery;
+namespace AutoTurn.Application.Offices.Queries.RemoveOfficePlanSettingQuery;
 
-public class OfficePlanSettingQueryHandler : IRequestHandler<OfficePlanSettingQuery, ErrorOr<Office>>
+public class RemoveOfficePlanSettingQueryHandler : IRequestHandler<RemoveOfficePlanSettingQuery, ErrorOr<Office>>
 {
     private readonly IOfficeRepository _officeRepository;
     private readonly IPlanRepository _planRespository;
     private readonly UserManager<User> _userManager;
 
-    public OfficePlanSettingQueryHandler(
+    public RemoveOfficePlanSettingQueryHandler(
         IOfficeRepository officeRepository,
         IPlanRepository planRespository,
         UserManager<User> userManager)
@@ -23,7 +23,7 @@ public class OfficePlanSettingQueryHandler : IRequestHandler<OfficePlanSettingQu
         _userManager = userManager;
     }
 
-    public async Task<ErrorOr<Office>> Handle(OfficePlanSettingQuery request, CancellationToken cancellationToken)
+    public async Task<ErrorOr<Office>> Handle(RemoveOfficePlanSettingQuery request, CancellationToken cancellationToken)
     {
         var office = await _officeRepository.GetOfficeByIdAsync(request.Id);
 
@@ -37,33 +37,24 @@ public class OfficePlanSettingQueryHandler : IRequestHandler<OfficePlanSettingQu
                 return Errors.Authentication.Forbidden;
         }
 
-        if(plan == null) return Errors.Plan.NotFound;
+        if (plan == null) return Errors.Plan.NotFound;
 
-        var planInOffice = office.PlanSettings.FirstOrDefault(s => s.PlanId == request.PlanId);
-        if (planInOffice is not null)
-        {
-            planInOffice.PlanCapacity = request.Capacity;
-            planInOffice.StartTime = request.StartTime;
-            planInOffice.EndTime = request.EndTime;
-        }
-        else
-        {
-            var officeSetting = new PlanSetting
-            {
-                StartTime = request.StartTime,
-                EndTime = request.EndTime,
-                PlanCapacity = request.Capacity,
-                PlanId = request.PlanId,
-            };
 
-            office.Plans.Add(plan);
-            office.PlanSettings.Add(officeSetting);
 
-        }
+
+        
+        var officeSetting = office.PlanSettings.FirstOrDefault(s => s.PlanId == request.PlanId);
+        
+        if(officeSetting == null) return Errors.Plan.NotFound;
+
+        office.Plans.Remove(plan);
+        office.PlanSettings.Remove(officeSetting);
+
+
 
 
         await _officeRepository.SaveChangesAsync();
-        return office; 
+        return office;
     }
 }
 

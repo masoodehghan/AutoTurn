@@ -9,5 +9,7 @@ public static partial class Errors
     {
         public static Error NotFound => Error.NotFound(code:"office not found");
         public static Error WrongData => Error.Validation(code: "enter valid data");
+
+        public static Error ProvinceIdRequired => Error.Validation(code: "enter province Id");
     }
 }

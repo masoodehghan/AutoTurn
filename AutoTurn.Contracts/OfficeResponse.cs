@@ -11,10 +11,16 @@ public record OfficeResponse(
     string Name,
     ProvinceResponse Province,
     List<PlanSettingResponse> PlanSettings,
-    AddressResponse Address
+    AddressResponse Address,
+    List<AdminResponse> Admins
     );
 
-
+public record AdminResponse(
+    string Id,
+    string UserName,
+    string FirstName,
+    string LastName
+    );
 
 public record PlanSettingResponse(
     string? StartTime,

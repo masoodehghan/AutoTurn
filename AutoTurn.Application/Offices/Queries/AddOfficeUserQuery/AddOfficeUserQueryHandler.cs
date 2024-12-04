@@ -44,6 +44,8 @@ public class AddOfficeUserQueryHandler : IRequestHandler<AddOfficeUserQuery, Err
         {
             var user = await _userRepository.GetUserByIdAsync(id);
             if (user == null) return Errors.Authentication.NotFound;
+            if (user.IsAdmin || user.IsSuperAdmin) return Errors.Authentication.Forbidden;
+            if (user.OfficeId is not null) return Errors.Office.WrongData;
             office.Admins.Add(user);
         }
 

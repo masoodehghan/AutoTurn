@@ -209,7 +209,7 @@
         }
       }
     },
-    "/api/Office/{id}": {
+    "/api/Office/{Id}": {
       "get": {
         "tags": [
           "Office"
@@ -231,48 +231,6 @@
           }
         }
       },
-      "put": {
-        "tags": [
-          "Office"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateOfficeQuery"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateOfficeQuery"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateOfficeQuery"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Office/{Id}": {
       "delete": {
         "tags": [
           "Office"
@@ -303,6 +261,48 @@
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/DeleteOfficeQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Office/{id}": {
+      "put": {
+        "tags": [
+          "Office"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateOfficeQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateOfficeQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateOfficeQuery"
               }
             }
           }
@@ -354,10 +354,50 @@
             "description": "OK"
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "Office"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveOfficePlanSettingQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveOfficePlanSettingQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveOfficePlanSettingQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
-    "/{officeId}/users": {
-      "post": {
+    "/api/Office/{OfficeId}/users": {
+      "patch": {
         "tags": [
           "Office"
         ],
@@ -387,6 +427,46 @@
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/AddOfficeUserQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Office"
+        ],
+        "parameters": [
+          {
+            "name": "OfficeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveOfficeUserQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveOfficeUserQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveOfficeUserQuery"
               }
             }
           }
@@ -566,13 +646,6 @@
               "type": "string"
             },
             "nullable": true
-          },
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "authUser": {
-            "$ref": "#/components/schemas/ClaimsPrincipal"
           }
         },
         "additionalProperties": false
@@ -784,7 +857,8 @@
           },
           "provinceId": {
             "type": "integer",
-            "format": "int32"
+            "format": "int32",
+            "nullable": true
           },
           "address": {
             "$ref": "#/components/schemas/AddressCommand"
@@ -906,6 +980,43 @@
           "password": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RemoveOfficePlanSettingQuery": {
+        "type": "object",
+        "properties": {
+          "planId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "authUser": {
+            "$ref": "#/components/schemas/ClaimsPrincipal"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RemoveOfficeUserQuery": {
+        "type": "object",
+        "properties": {
+          "userIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "authUser": {
+            "$ref": "#/components/schemas/ClaimsPrincipal"
           }
         },
         "additionalProperties": false

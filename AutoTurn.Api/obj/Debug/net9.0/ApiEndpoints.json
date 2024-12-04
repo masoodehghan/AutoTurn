@@ -1,26 +1,5 @@
 [
   {
-    "ContainingType": "AutoTurn.Api.Controllers.OfficeController",
-    "Method": "OfficeUserPost",
-    "RelativePath": "{officeId}/users",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "AutoTurn.Application.Offices.Queries.AddOfficeUserQuery.AddOfficeUserQuery",
-        "IsRequired": true
-      },
-      {
-        "Name": "OfficeId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "AutoTurn.Contracts.Controllers.AuthenticationController",
     "Method": "Login",
     "RelativePath": "api/auth/login",
@@ -142,22 +121,6 @@
   },
   {
     "ContainingType": "AutoTurn.Api.Controllers.OfficeController",
-    "Method": "Get",
-    "RelativePath": "api/Office/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AutoTurn.Api.Controllers.OfficeController",
     "Method": "Update",
     "RelativePath": "api/Office/{id}",
     "HttpMethod": "PUT",
@@ -171,6 +134,22 @@
       },
       {
         "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AutoTurn.Api.Controllers.OfficeController",
+    "Method": "Get",
+    "RelativePath": "api/Office/{Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -200,6 +179,48 @@
   },
   {
     "ContainingType": "AutoTurn.Api.Controllers.OfficeController",
+    "Method": "OfficeUserPost",
+    "RelativePath": "api/Office/{OfficeId}/users",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AutoTurn.Application.Offices.Queries.AddOfficeUserQuery.AddOfficeUserQuery",
+        "IsRequired": true
+      },
+      {
+        "Name": "OfficeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AutoTurn.Api.Controllers.OfficeController",
+    "Method": "OfficeUserDelete",
+    "RelativePath": "api/Office/{OfficeId}/users",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AutoTurn.Application.Offices.Queries.RemoveOfficeUserQuery.RemoveOfficeUserQuery",
+        "IsRequired": true
+      },
+      {
+        "Name": "OfficeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AutoTurn.Api.Controllers.OfficeController",
     "Method": "OfficePlanSetting",
     "RelativePath": "api/office/plans/setting/{id}",
     "HttpMethod": "PATCH",
@@ -209,6 +230,27 @@
       {
         "Name": "request",
         "Type": "AutoTurn.Application.Offices.Queries.OfficePlanSettingQuery.OfficePlanSettingQuery",
+        "IsRequired": true
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AutoTurn.Api.Controllers.OfficeController",
+    "Method": "RemoveOfficePlanSetting",
+    "RelativePath": "api/office/plans/setting/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AutoTurn.Application.Offices.Queries.RemoveOfficePlanSettingQuery.RemoveOfficePlanSettingQuery",
         "IsRequired": true
       },
       {

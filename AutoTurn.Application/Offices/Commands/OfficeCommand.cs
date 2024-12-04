@@ -9,7 +9,7 @@ public record OfficeCommand(
     int Id,
     string? AdminId,
     string Name,
-    int ProvinceId,
+    int? ProvinceId,
     AddressCommand Address
     ) : IRequest<ErrorOr<Office>>
 {

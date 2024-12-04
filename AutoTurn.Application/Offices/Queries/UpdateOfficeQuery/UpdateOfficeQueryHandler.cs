@@ -32,8 +32,12 @@ public class UpdateOfficeQueryHandler : IRequestHandler<UpdateOfficeQuery, Error
                     return Errors.Authentication.Forbidden;
         }
 
+        if(request.AuthUser.IsInRole("SuperAdmin"))
+        {
+            office.ProvinceId = request.ProvinceId ?? office.ProvinceId;
+        }
+
         office.Name = request.Name ?? office.Name;
-        office.ProvinceId = request.ProvinceId ?? office.ProvinceId;
         office.Address.City = request.Address.City;
         office.Address.Street = request.Address.Street;
         office.Address.PostalCode = request.Address.PostalCode;

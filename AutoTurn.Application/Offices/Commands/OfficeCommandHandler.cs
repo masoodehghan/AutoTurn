@@ -34,11 +34,39 @@ public class OfficeCommandHandler : IRequestHandler<OfficeCommand, ErrorOr<Offic
             PostalCode = request.Address.PostalCode,
         };
 
+        int provinceId = 0;
+        User? user = null;
+
+        if(request.ProvinceId is not null && request.AuthUser.IsInRole("Admin"))
+        {
+            return Errors.Office.ProvinceIdRequired;
+        }
+
+        if(request.ProvinceId is null)
+        {
+            user = await _userRepository.GetUserByIdWithProvinceAsync(
+                _userManager.GetUserId(request.AuthUser));
+
+            if (user == null) return Errors.Authentication.NotFound;
+            if (user.Province is null) return Errors.Office.ProvinceIdRequired;
+
+            provinceId = user.Province.Id;
+        }
+
+        if(request.AuthUser!.IsInRole("SuperAdmin") )
+        {
+            if(request.ProvinceId is null) return Errors.Office.ProvinceIdRequired;
+
+            provinceId = (int)request.ProvinceId;
+
+        }
+
+
         Office office = new Office
         {
             Id = request.Id,
             Name = request.Name,
-            ProvinceId = request.ProvinceId
+            ProvinceId = provinceId
         };
 
         office.Address = address;

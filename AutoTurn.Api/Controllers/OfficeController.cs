@@ -10,6 +10,9 @@ using AutoTurn.Application.Offices.Queries.DeleteOfficeQuery;
 using AutoTurn.Application.Offices.Queries.OfficePlanSettingQuery;
 using AutoTurn.Application.Offices.Queries.ListOfficeQuery;
 using AutoTurn.Application.Offices.Queries.AddOfficeUserQuery;
+using AutoTurn.Application.Offices.Queries.RemoveOfficeUserQuery;
+using AutoTurn.Application.Offices.Queries.GetOfficeQuery;
+using AutoTurn.Application.Offices.Queries.RemoveOfficePlanSettingQuery;
 
 namespace AutoTurn.Api.Controllers;
 
@@ -20,7 +23,6 @@ public class OfficeController : ApiController
 {
     private readonly ISender _mediatr;
     private readonly IMapper _mapper;
-    private readonly IOfficeRepository _officeRepository;
 
     public OfficeController(
         ISender mediatr,
@@ -29,7 +31,6 @@ public class OfficeController : ApiController
     {
         _mediatr = mediatr;
         _mapper = mapper;
-        _officeRepository = officeRepository;
     }
 
     [HttpPost]
@@ -55,13 +56,15 @@ public class OfficeController : ApiController
             errors => Problem(errors));
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{Id}")]
     public async Task<IActionResult> Get(int Id)
     {
-        var office = await _officeRepository.GetOfficeByIdAsync(Id);
-        if (office is null) return NotFound();
+        GetOfficeQuery query = new(Id, User);
 
-        return Ok(_mapper.Map<OfficeResponse>(office));
+        var result = await _mediatr.Send(query);
+        return result.Match(
+            value => Ok(_mapper.Map<OfficeResponse>(value)),
+            errors => Problem(errors));
     }
 
 
@@ -105,9 +108,40 @@ public class OfficeController : ApiController
         
     }
 
+    [HttpDelete("/api/office/plans/setting/{id}")]
+    public async Task<IActionResult> RemoveOfficePlanSetting(
+        RemoveOfficePlanSettingQuery request,
+        int id)
+    {
+        request.Id = id;
+        request.AuthUser = User;
+        var result = await _mediatr.Send(request);
 
-    [HttpPost("/{officeId}/users")]
+        return result.Match(
+            value => Ok(_mapper.Map<OfficeResponse>(value)),
+            errors => Problem(errors));
+
+    }
+
+
+    [HttpPatch("{OfficeId}/users")]
     public async Task<IActionResult> OfficeUserPost(AddOfficeUserQuery request, int OfficeId)
+    {
+        request.Id = OfficeId;
+        request.AuthUser = User;
+
+        var result = await _mediatr.Send(request);
+
+        return result.Match(
+            value => Ok(_mapper.Map<OfficeResponse>(value)),
+            errors => Problem(errors)
+            );
+    }
+
+    [HttpDelete("{OfficeId}/users")]
+    public async Task<IActionResult> OfficeUserDelete(
+        RemoveOfficeUserQuery request,
+        int OfficeId)
     {
         request.Id = OfficeId;
         request.AuthUser = User;

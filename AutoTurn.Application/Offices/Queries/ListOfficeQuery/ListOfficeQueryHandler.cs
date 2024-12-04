@@ -28,7 +28,7 @@ public class ListOfficeQueryHandler :
     {
 
         int? provinceId = request.ProvinceId;
-        if (request.AuthUser!.IsInRole("Admin") && provinceId is not null)
+        if (!request.AuthUser!.IsInRole("SuperAdmin"))
         {
             var userId = _userManager.GetUserId(request.AuthUser);
             var user = await _userRepository.GetUserByIdWithProvinceAsync(userId);

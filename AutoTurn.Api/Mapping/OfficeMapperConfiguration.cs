@@ -11,6 +11,7 @@ namespace AutoTurn.Api.Mapping
         {
             config.NewConfig<Office, OfficeResponse>();
             config.NewConfig<PlanSetting, PlanSettingResponse>();
+            config.NewConfig<User, AdminResponse>();
 
             config.NewConfig<Province, ProvinceResponse>();
             config.NewConfig<PlanCommand, Plan>();

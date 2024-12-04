@@ -43,12 +43,18 @@ public class OfficeRepository : IOfficeRepository
             offices = offices.Where(s => s.ProvinceId == ProvinceId);
         }
 
-        return await offices.ToListAsync();
+        return await offices.Include(s => s.Admins).AsNoTracking().ToListAsync();
     }
 
     public async Task<Office?> GetOfficeByIdAsync(int id)
     {
        return await _context.Offices.Include(o=>o.Province).SingleOrDefaultAsync(o =>  o.Id == id);
+    }
+
+    public async Task<Office?> ReadOnlyOfficeByIdAsync(int id)
+    {
+        return await _context.Offices.Include(o => o.Admins).Include(o => o.Province)
+            .AsNoTracking().SingleOrDefaultAsync(o => o.Id == id);
     }
 
     public async Task SaveChangesAsync()
