@@ -2156,6 +2156,16 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "AutoTurn.Contracts/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/AutoTurn.Contracts.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AutoTurn.Contracts.dll": {}
+        }
+      },
       "AutoTurn.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -6429,6 +6439,11 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "AutoTurn.Contracts/1.0.0": {
+      "type": "project",
+      "path": "../AutoTurn.Contracts/AutoTurn.Contracts.csproj",
+      "msbuildProject": "../AutoTurn.Contracts/AutoTurn.Contracts.csproj"
+    },
     "AutoTurn.Models/1.0.0": {
       "type": "project",
       "path": "../AutoTurn.Models/AutoTurn.Models.csproj",
@@ -6437,6 +6452,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "AutoTurn.Contracts >= 1.0.0",
       "AutoTurn.Models >= 1.0.0",
       "ErrorOr >= 2.0.1",
       "FluentValidation >= 11.11.0",
@@ -6480,6 +6496,9 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
+            "F:\\dev\\AutoTurn\\AutoTurn.Contracts\\AutoTurn.Contracts.csproj": {
+              "projectPath": "F:\\dev\\AutoTurn\\AutoTurn.Contracts\\AutoTurn.Contracts.csproj"
+            },
             "F:\\dev\\AutoTurn\\AutoTurn.Models\\AutoTurn.Models.csproj": {
               "projectPath": "F:\\dev\\AutoTurn\\AutoTurn.Models\\AutoTurn.Models.csproj"
             }

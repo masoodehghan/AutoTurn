@@ -46,7 +46,8 @@ public class OfficeController : ApiController
     }
 
     [HttpGet]
-    public async Task<IActionResult> Get([FromQuery]ListOfficeQuery request)
+    public async Task<IActionResult> Get(
+        [FromQuery] ListOfficeQuery request)
     {
         request.AuthUser = User;
         var result = await _mediatr.Send(request);

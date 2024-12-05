@@ -22,6 +22,9 @@ public static class DependencyInjection
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IOfficeRepository, OfficeRepository>();
         services.AddScoped<IPlanRepository, PlanRepository>();
+        services.AddScoped<IForeignRepository, ForeignRepository>();
+        services.AddScoped<ITurnRepository, TurnRepository>();
+
 
 
         services.Configure<JwtSettings>(configuration.GetSection(JwtSettings.SectionName));

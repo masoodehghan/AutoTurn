@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v9.0": {
       "AutoTurn.Application/1.0.0": {
         "dependencies": {
+          "AutoTurn.Contracts": "1.0.0",
           "AutoTurn.Models": "1.0.0",
           "ErrorOr": "2.0.1",
           "FluentValidation": "11.11.0",
@@ -1334,6 +1335,14 @@
           "System.Xml.ReaderWriter": "4.0.11"
         }
       },
+      "AutoTurn.Contracts/1.0.0": {
+        "runtime": {
+          "AutoTurn.Contracts.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "AutoTurn.Models/1.0.0": {
         "dependencies": {
           "ErrorOr": "2.0.1",
@@ -2223,6 +2232,11 @@
       "sha512": "sha512-Mk2mKmPi0nWaoiYeotq1dgeNK1fqWh61+EK+w4Wu8SWuTYLzpUnschb59bJtGywaPq7SmTuPf44wrXRwbIrukg==",
       "path": "system.xml.xdocument/4.0.11",
       "hashPath": "system.xml.xdocument.4.0.11.nupkg.sha512"
+    },
+    "AutoTurn.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "AutoTurn.Models/1.0.0": {
       "type": "project",

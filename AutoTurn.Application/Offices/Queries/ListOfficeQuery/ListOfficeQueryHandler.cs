@@ -39,9 +39,9 @@ public class ListOfficeQueryHandler :
             }
             provinceId = user.Province.Id;
         }
-
+        int PageSize = request.PageRequest?.PageSize ?? 10;
         var offices = await _officeRepository.GetAllOfficeAsync(
-           provinceId);
+           provinceId, request.PageRequest?.PageIndex, PageSize);
 
 
 

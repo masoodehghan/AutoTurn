@@ -1246,6 +1246,7 @@
       },
       "AutoTurn.Application/1.0.0": {
         "dependencies": {
+          "AutoTurn.Contracts": "1.0.0",
           "AutoTurn.Models": "1.0.0",
           "ErrorOr": "2.0.1",
           "FluentValidation": "11.11.0",

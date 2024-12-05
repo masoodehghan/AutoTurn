@@ -143,6 +143,9 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
+              "F:\\dev\\AutoTurn\\AutoTurn.Contracts\\AutoTurn.Contracts.csproj": {
+                "projectPath": "F:\\dev\\AutoTurn\\AutoTurn.Contracts\\AutoTurn.Contracts.csproj"
+              },
               "F:\\dev\\AutoTurn\\AutoTurn.Models\\AutoTurn.Models.csproj": {
                 "projectPath": "F:\\dev\\AutoTurn\\AutoTurn.Models\\AutoTurn.Models.csproj"
               }

@@ -29,3 +29,5 @@ F:\dev\AutoTurn\AutoTurn.Application\obj\Debug\net9.0\AutoTurn.Application.dll
 F:\dev\AutoTurn\AutoTurn.Application\obj\Debug\net9.0\refint\AutoTurn.Application.dll
 F:\dev\AutoTurn\AutoTurn.Application\obj\Debug\net9.0\AutoTurn.Application.pdb
 F:\dev\AutoTurn\AutoTurn.Application\obj\Debug\net9.0\ref\AutoTurn.Application.dll
+F:\dev\AutoTurn\AutoTurn.Application\bin\Debug\net9.0\AutoTurn.Contracts.dll
+F:\dev\AutoTurn\AutoTurn.Application\bin\Debug\net9.0\AutoTurn.Contracts.pdb

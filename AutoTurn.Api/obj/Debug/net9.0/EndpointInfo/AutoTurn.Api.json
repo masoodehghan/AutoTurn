@@ -200,6 +200,22 @@
             "schema": {
               "type": "boolean"
             }
+          },
+          {
+            "name": "PageRequest.PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageRequest.PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
           }
         ],
         "responses": {
@@ -633,6 +649,37 @@
           }
         }
       }
+    },
+    "/api/Turn": {
+      "post": {
+        "tags": [
+          "Turn"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TurnCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TurnCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TurnCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1014,6 +1061,32 @@
           "id": {
             "type": "integer",
             "format": "int32"
+          },
+          "authUser": {
+            "$ref": "#/components/schemas/ClaimsPrincipal"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TurnCommand": {
+        "type": "object",
+        "properties": {
+          "foreignCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "planId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "officeId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "foreignPhoneNumber": {
+            "type": "string",
+            "nullable": true
           },
           "authUser": {
             "$ref": "#/components/schemas/ClaimsPrincipal"

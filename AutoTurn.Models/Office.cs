@@ -7,10 +7,10 @@ namespace AutoTurn.Models;
 public class PlanSetting
 {
     public int PlanId { get; set; }
-    public DateTime? StartTime { get; set; }
-    public DateTime? EndTime { get; set; }
+    public DateTime StartTime { get; set; }
+    public DateTime EndTime { get; set; }
     public int PlanCapacity { get; set; }
-
+    public int PlanForeignCount { get; set; } = 0;
 }
 
 public class Office : SoftDelete

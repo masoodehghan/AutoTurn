@@ -19,7 +19,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AutoTurn.Contracts\AutoTurn.Contracts.csproj" />
     <ProjectReference Include="..\AutoTurn.Models\AutoTurn.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Turns\Queries\" />
   </ItemGroup>
 
 </Project>

@@ -33,3 +33,5 @@ F:\dev\AutoTurn\AutoTurn.Infrustructure\obj\Debug\net9.0\AutoTurn.Infrustructure
 F:\dev\AutoTurn\AutoTurn.Infrustructure\obj\Debug\net9.0\refint\AutoTurn.Infrustructure.dll
 F:\dev\AutoTurn\AutoTurn.Infrustructure\obj\Debug\net9.0\AutoTurn.Infrustructure.pdb
 F:\dev\AutoTurn\AutoTurn.Infrustructure\obj\Debug\net9.0\ref\AutoTurn.Infrustructure.dll
+F:\dev\AutoTurn\AutoTurn.Infrustructure\bin\Debug\net9.0\AutoTurn.Contracts.dll
+F:\dev\AutoTurn\AutoTurn.Infrustructure\bin\Debug\net9.0\AutoTurn.Contracts.pdb

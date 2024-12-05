@@ -7,8 +7,8 @@ public class Turn :SoftDelete
     public Foreign Foreign { get; set; }
     public int ForeignId { get; set; }
 
-    public DateTime? StartTime { get; set; }
-    public DateTime? EndTime { get; set; }
+    public DateTime StartTime { get; set; }
+    public DateTime EndTime { get; set; }
     public Plan Plan { get; set; }
     //public bool IsActive { get; set; } = true;
 

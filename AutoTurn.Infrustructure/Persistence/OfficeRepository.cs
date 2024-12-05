@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 namespace AutoTurn.Infrastructure.Persistence;
 
 
-public class OfficeRepository : IOfficeRepository
+public class OfficeRepository :  PagedList<Office>, IOfficeRepository
 {
     private readonly AutoTurnDbContext _context;
 
@@ -28,11 +28,14 @@ public class OfficeRepository : IOfficeRepository
 
     public async Task<IEnumerable<Office>> GetAllOfficeAsync()
     {
-        return await _context.Offices.Include(o => o.Province).ToListAsync();
+        var paged = PageList(_context.Offices.Include(o => o.Province));
+        return await paged.ToListAsync();
     }
 
     public async Task<ICollection<Office>> GetAllOfficeAsync(
-        int? ProvinceId = null
+        int? ProvinceId = null,
+        int? pageIndex = null,
+        int pageSize = 10
         )
     {
 
@@ -43,12 +46,21 @@ public class OfficeRepository : IOfficeRepository
             offices = offices.Where(s => s.ProvinceId == ProvinceId);
         }
 
-        return await offices.Include(s => s.Admins).AsNoTracking().ToListAsync();
+        var paged = PageList(offices.Include(s => s.Admins).AsNoTracking(),
+            pageIndex, pageSize);
+
+        return await paged.ToListAsync();
     }
 
     public async Task<Office?> GetOfficeByIdAsync(int id)
     {
        return await _context.Offices.Include(o=>o.Province).SingleOrDefaultAsync(o =>  o.Id == id);
+    }
+
+    public async Task<Office?> GetOfficeByIdAsyncWithPlan(int id)
+    {
+        return await _context.Offices.Include(o => o.Plans).
+            SingleOrDefaultAsync(f => f.Id == id);
     }
 
     public async Task<Office?> ReadOnlyOfficeByIdAsync(int id)

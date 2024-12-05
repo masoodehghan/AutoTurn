@@ -8,5 +8,6 @@ public class TurnConfiguration : IEntityTypeConfiguration<Turn>
 {
     public void Configure(EntityTypeBuilder<Turn> builder)
     {
+        builder.HasIndex(s => new { s.PlanId, s.OfficeId, s.ForeignId }).IsUnique();
     }
 }

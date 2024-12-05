@@ -25,11 +25,26 @@ namespace AutoTurn.Infrustructure.Persistence
 
         }
 
+        public async Task<User?> GetUserByIdWithOfficeAsync(string Id)
+        {
+            return await _context.Users.Include(f => f.Office)
+                .AsNoTracking().SingleOrDefaultAsync(f => f.Id == Id);
+        }
+
+        public async Task<User?> GetUserByIdWithPlanAsync(string Id)
+        {
+            return await _context.Users
+                .Include(f => f.Office).ThenInclude(s => s.Plans)
+                .SingleOrDefaultAsync(f => f.Id == Id);
+        }
+
         public async Task<User?> GetUserByIdWithProvinceAsync(string Id)
         {
             return await _context.Users.Include(s => s.Province)
                 .SingleOrDefaultAsync(u => u.Id == Id);
         }
+
+
 
         public async  Task<User?> GetUserByUserNameAsync(string userName)
         {

@@ -115,6 +115,16 @@
         "Name": "AuthUser.Identity.IsAuthenticated",
         "Type": "System.Boolean",
         "IsRequired": false
+      },
+      {
+        "Name": "PageRequest.PageSize",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageRequest.PageIndex",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -356,6 +366,22 @@
       {
         "Name": "userId",
         "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AutoTurn.Api.Controllers.TurnController",
+    "Method": "Post",
+    "RelativePath": "api/Turn",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "AutoTurn.Application.Turns.Commands.TurnCommand",
         "IsRequired": true
       }
     ],
