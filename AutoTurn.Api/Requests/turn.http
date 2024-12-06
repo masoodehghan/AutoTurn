@@ -5,11 +5,11 @@
 
 Post {{AutoTurn.Api_HostAddress}}/api/Turn 
 Accept: application/json
-Authorization: Bearer {{normalToken}}
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "foreignCode": "806539751878",
+  "foreignCode": "873150114641",
   "officeId": 151,
   "planId": 300,
   "foreignPhoneNumber": "fe"

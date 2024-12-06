@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AutoTurn.Infrastructure.Persistence;
 
-public class TurnRepository : PagedList<Turn>,ITurnRepository
+public class TurnRepository : PagedList<Turn>, ITurnRepository
 {
     private readonly AutoTurnDbContext _context;
 
@@ -16,7 +16,11 @@ public class TurnRepository : PagedList<Turn>,ITurnRepository
     public async Task<ICollection<Turn>> TurnListDescendByTime(int officeId, int planId)
     {
         return await _context.Turns
-            .Where(t => t.OfficeId == officeId && t.PlanId == planId)
+            .Where(
+            t => t.OfficeId == officeId &&
+            t.PlanId == planId ||
+            t.TranferedOfficeId == officeId
+            )
             .OrderBy(f => f.EndTime).ToListAsync();
     }
 
@@ -79,5 +83,14 @@ public class TurnRepository : PagedList<Turn>,ITurnRepository
         }
 
         return  await PageList(turns, PageIndex , PageSize ?? 10).ToListAsync();
+    }
+
+    public async Task<Turn?> GetTurnByIdAsync(int turnId)
+    {
+        return await _context.Turns
+            .Include(t => t.Office)
+            .Include(t => t.Foreign)
+            .Include(t => t.Plan)
+            .SingleOrDefaultAsync(t => t.Id == turnId);
     }
 }

@@ -105,14 +105,7 @@ public class TurnCommandHandler : IRequestHandler<TurnCommand, ErrorOr<Turn>>
         else
         {
             var lastTurn = turns.Last().EndTime;
-            if (lastTurn.Date != DateTime.Now.Date)
-            {
-                start = DateTime.Now.Date + TimeOfStart;
-            } 
-            else
-            {
-                start = DateTime.Now.Date + lastTurn.TimeOfDay;
-            }
+            start = lastTurn;
             end = start.AddMinutes(plan.DuarationMinute);
         }
 
@@ -125,18 +118,21 @@ public class TurnCommandHandler : IRequestHandler<TurnCommand, ErrorOr<Turn>>
         if (end.TimeOfDay > TimeOfEnd)
         {
             
-            start = start.AddDays(1).Date + TimeOfStart;
+            start = (turns.Last().StartTime.Date == start.Date) 
+                ? start.AddDays(1)
+                : start.AddDays(1).Date + TimeOfStart;
+
             end = start.AddMinutes(plan.DuarationMinute);
         }
 
         if(start.DayOfWeek == DayOfWeek.Friday)
         {
-            start = start.AddDays(1).Date + TimeOfStart;
+            start = (turns.Last().StartTime.Date == start.Date)
+                ? start.AddDays(1)
+                : start.AddDays(1).Date + TimeOfStart;
+
             end = start.AddMinutes(plan.DuarationMinute);
-
         }
-
-
         if(planSetting.PlanCapacity <= planSetting.PlanForeignCount)
         {
             return Error.Validation(code: "maximum capacity reached");

@@ -23,8 +23,4 @@
     <ProjectReference Include="..\AutoTurn.Models\AutoTurn.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Turns\Queries\" />
-  </ItemGroup>
-
 </Project>

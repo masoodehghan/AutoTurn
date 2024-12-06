@@ -6,7 +6,6 @@ public interface ITurnRepository
 {
     Task<ICollection<Turn>> TurnListDescendByTime(int officeId, int planId);
     Task AddTurnAsync(Turn turn);
-
     Task<ICollection<Turn>> TurnListWithFilters(
         int? PlanId,
         string? ForeignCode,
@@ -17,4 +16,7 @@ public interface ITurnRepository
         int? OfficeId,
         int? PageIndex,
         int? PageSize);
+
+
+    Task<Turn?> GetTurnByIdAsync(int turnId);
 }
