@@ -1,4 +1,5 @@
 ﻿using AutoTurn.Application.Turns.Commands;
+using AutoTurn.Application.Turns.Queries.DeleteTurnQuery;
 using AutoTurn.Application.Turns.Queries.ListTurnsQuery;
 using AutoTurn.Application.Turns.Queries.TransferTurnQuery;
 using AutoTurn.Contracts;
@@ -6,6 +7,7 @@ using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using System.Text.Json.Serialization;
 
 namespace AutoTurn.Api.Controllers;
@@ -37,7 +39,7 @@ public class TurnController : ApiController
 
     [Authorize]
     [HttpGet]
-    public async Task<IActionResult> Get([FromQuery]ListTurnsQuery request)
+    public async Task<IActionResult> Get([FromQuery] ListTurnsQuery request)
     {
         request.AuthUser = User;
         var result = await _mediatr.Send(request);
@@ -49,7 +51,7 @@ public class TurnController : ApiController
     }
 
     [Authorize]
-    [HttpPatch]
+    [HttpPatch("transfer")]
     public async Task<IActionResult> TransferTurn(TransferTurnQuery request)
     {
         request.AuthUser = User;
@@ -57,6 +59,20 @@ public class TurnController : ApiController
 
         return result.Match(
             value => Ok(_mapper.Map<TurnResponse>(value)),
+            errors => Problem(errors)
+            );
+    }
+
+    [Authorize]
+    [HttpDelete("{Id}")]
+    public async Task<IActionResult> Delete(DeleteTurnQuery request, int Id)
+    {
+        request.AuthUser = User;
+        request.Id = Id;
+        var result = await _mediatr.Send(request);
+
+        return result.Match(
+            _ => NoContent(),
             errors => Problem(errors)
             );
     }

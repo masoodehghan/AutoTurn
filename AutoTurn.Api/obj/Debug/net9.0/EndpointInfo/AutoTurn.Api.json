@@ -103,6 +103,24 @@
         "tags": [
           "Foreign"
         ],
+        "parameters": [
+          {
+            "name": "PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -494,6 +512,77 @@
         }
       }
     },
+    "/api/Office/foreigns": {
+      "get": {
+        "tags": [
+          "Office"
+        ],
+        "parameters": [
+          {
+            "name": "PageRequest.PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageRequest.PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "AuthUser.Claims",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Claim"
+              }
+            }
+          },
+          {
+            "name": "AuthUser.Identities",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ClaimsIdentity"
+              }
+            }
+          },
+          {
+            "name": "AuthUser.Identity.Name",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "AuthUser.Identity.AuthenticationType",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "AuthUser.Identity.IsAuthenticated",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Plan": {
       "post": {
         "tags": [
@@ -801,7 +890,9 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/Turn/transfer": {
       "patch": {
         "tags": [
           "Turn"
@@ -821,6 +912,48 @@
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/TransferTurnQuery"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Turn/{Id}": {
+      "delete": {
+        "tags": [
+          "Turn"
+        ],
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteTurnQuery"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteTurnQuery"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteTurnQuery"
               }
             }
           }
@@ -997,6 +1130,20 @@
           "id": {
             "type": "integer",
             "format": "int32"
+          },
+          "authUser": {
+            "$ref": "#/components/schemas/ClaimsPrincipal"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteTurnQuery": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
           },
           "authUser": {
             "$ref": "#/components/schemas/ClaimsPrincipal"
@@ -1229,9 +1376,6 @@
           "officeId": {
             "type": "integer",
             "format": "int32"
-          },
-          "authUser": {
-            "$ref": "#/components/schemas/ClaimsPrincipal"
           }
         },
         "additionalProperties": false

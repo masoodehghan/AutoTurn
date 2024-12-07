@@ -37,6 +37,10 @@ internal class TransferTurnQueryHandler : IRequestHandler<TransferTurnQuery, Err
         var turn = await _turnRepository.GetTurnByIdAsync(request.TurnId);
         if (turn == null) return Error.NotFound(code: "turn not found");
 
+        if(!turn.Plan.IsTranferAvailable )
+        {
+            return Error.Validation(description: "transfer not available");
+        }
         if (request.AuthUser.IsInRole("Normal"))
         {
             var user = await _userRepository.GetUserByIdWithOfficeAsync(
@@ -72,7 +76,7 @@ internal class TransferTurnQueryHandler : IRequestHandler<TransferTurnQuery, Err
         if (turns.Count == 0)
         {
             start = DateTime.Now.Date + TimeOfStart;
-            end = start.AddMinutes(office.Plan.DuarationMinute);
+            end = start.AddMinutes(turn.Plan.DuarationMinute);
         }
         else
         {

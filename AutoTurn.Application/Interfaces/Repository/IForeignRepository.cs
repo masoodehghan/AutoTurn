@@ -11,6 +11,11 @@ public interface IForeignRepository
     Task<Foreign?> GetByPassport(string passportCode);
     Task<Foreign?> GetByFaragir(long faragirCode);
 
+    Task<ICollection<Foreign>> GetAllAsync(
+        int PageIndex,
+        int PageSize,
+        int? officeId = null);
+
 }
 
 

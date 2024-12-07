@@ -1,4 +1,5 @@
-﻿using AutoTurn.Models;
+﻿using AutoTurn.Application.Interfaces.Repository;
+using AutoTurn.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,17 +10,21 @@ namespace AutoTurn.Api.Controllers
     [Route("api/[controller]")]
     public class ForeignController : ApiController
     {
-        private readonly AutoTurnDbContext _context;
+        private readonly IForeignRepository _foreignRepository;
 
-        public ForeignController(AutoTurnDbContext context)
+        public ForeignController(IForeignRepository foreignRepository)
         {
-            _context = context;
+            _foreignRepository = foreignRepository;
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get(
+            [FromQuery] int? PageSize ,
+            [FromQuery] int? PageIndex
+            )
         {
-            return Ok(await _context.Foreigns.ToListAsync());
+            
+            return Ok(await _foreignRepository.GetAllAsync(PageIndex ??0, PageSize??10));
         }
     }
 }

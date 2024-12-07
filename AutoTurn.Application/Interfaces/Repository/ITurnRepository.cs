@@ -19,4 +19,6 @@ public interface ITurnRepository
 
 
     Task<Turn?> GetTurnByIdAsync(int turnId);
+
+    Task DeleteTurnAsync(Turn turn);
 }

@@ -13,12 +13,12 @@ using AutoTurn.Application.Offices.Queries.AddOfficeUserQuery;
 using AutoTurn.Application.Offices.Queries.RemoveOfficeUserQuery;
 using AutoTurn.Application.Offices.Queries.GetOfficeQuery;
 using AutoTurn.Application.Offices.Queries.RemoveOfficePlanSettingQuery;
+using AutoTurn.Application.Offices.Queries.ListForeignQuery;
 
 namespace AutoTurn.Api.Controllers;
 
 
 [Route("api/[controller]")]
-[Authorize(Roles = "SuperAdmin,Admin")]
 public class OfficeController : ApiController
 {
     private readonly ISender _mediatr;
@@ -34,6 +34,8 @@ public class OfficeController : ApiController
     }
 
     [HttpPost]
+    [Authorize(Roles = "SuperAdmin,Admin")]
+
     public async Task<IActionResult> Post(OfficeCommand request)
     {
         request.AuthUser = User;
@@ -46,6 +48,8 @@ public class OfficeController : ApiController
     }
 
     [HttpGet]
+    [Authorize(Roles = "SuperAdmin,Admin")]
+
     public async Task<IActionResult> Get(
         [FromQuery] ListOfficeQuery request)
     {
@@ -58,6 +62,7 @@ public class OfficeController : ApiController
     }
 
     [HttpGet("{Id}")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
     public async Task<IActionResult> Get(int Id)
     {
         GetOfficeQuery query = new(Id, User);
@@ -70,6 +75,8 @@ public class OfficeController : ApiController
 
 
     [HttpPut("{id}")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
+
     public async Task<IActionResult> Update(UpdateOfficeQuery request, int id)
     {
         request.Id = id;
@@ -82,6 +89,8 @@ public class OfficeController : ApiController
             errors => Problem(errors)
             );
     }
+
+    [Authorize(Roles = "SuperAdmin,Admin")]
 
     [HttpDelete("{Id}")]
     public async Task<IActionResult> Delete(DeleteOfficeQuery request, int Id)
@@ -97,6 +106,8 @@ public class OfficeController : ApiController
     }
 
     [HttpPatch("/api/office/plans/setting/{id}")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
+
     public async Task<IActionResult> OfficePlanSetting(OfficePlanSettingQuery request, int id)
     {
         request.Id = id;
@@ -110,6 +121,8 @@ public class OfficeController : ApiController
     }
 
     [HttpDelete("/api/office/plans/setting/{id}")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
+
     public async Task<IActionResult> RemoveOfficePlanSetting(
         RemoveOfficePlanSettingQuery request,
         int id)
@@ -126,6 +139,8 @@ public class OfficeController : ApiController
 
 
     [HttpPatch("{OfficeId}/users")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
+
     public async Task<IActionResult> OfficeUserPost(AddOfficeUserQuery request, int OfficeId)
     {
         request.Id = OfficeId;
@@ -140,6 +155,8 @@ public class OfficeController : ApiController
     }
 
     [HttpDelete("{OfficeId}/users")]
+    [Authorize(Roles = "SuperAdmin,Admin")]
+
     public async Task<IActionResult> OfficeUserDelete(
         RemoveOfficeUserQuery request,
         int OfficeId)
@@ -153,5 +170,17 @@ public class OfficeController : ApiController
             value => Ok(_mapper.Map<OfficeResponse>(value)),
             errors => Problem(errors)
             );
+    }
+
+    [HttpGet("foreigns")]
+    [Authorize]
+    public async Task<IActionResult> GetForeigns([FromQuery]ListForeignQuery request)
+    {
+        request.AuthUser = User;
+        var result = await _mediatr.Send(request);
+
+        return result.Match(
+            value => Ok(value),
+            errors => Problem(errors));
     }
 }

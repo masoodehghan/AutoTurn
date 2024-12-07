@@ -93,4 +93,11 @@ public class TurnRepository : PagedList<Turn>, ITurnRepository
             .Include(t => t.Plan)
             .SingleOrDefaultAsync(t => t.Id == turnId);
     }
+
+    public async Task DeleteTurnAsync(Turn turn)
+    {
+        turn.IsActive = false;
+        turn.DeletedCount++;
+        await _context.SaveChangesAsync();
+    }
 }

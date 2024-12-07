@@ -85,7 +85,9 @@ public class TurnCommandHandler : IRequestHandler<TurnCommand, ErrorOr<Turn>>
             return Error.Validation(code: "enter a valid Foreign Code");
         }
 
-        if (foreign == null) return Error.NotFound(code: "foreign not found");
+        if (foreign == null) return Error.NotFound(
+            description: $"foreign not found code type for this plan is {plan.CodeType.ToString()}"
+            );
 
         var planSetting = office.PlanSettings.Single(s => s.PlanId == request.PlanId);
 
