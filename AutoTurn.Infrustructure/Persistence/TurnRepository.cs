@@ -105,4 +105,12 @@ public class TurnRepository : PagedList<Turn>, ITurnRepository
         turn.DeletedCount++;
         await _context.SaveChangesAsync();
     }
+
+    public async Task<bool> IsForeignAndPlanExists(int relatedPlanId, int ForeignId)
+    {
+        return await _context.Turns
+            .Where(t => t.ForeignId == ForeignId
+            && t.PlanId == relatedPlanId
+            ).AnyAsync();
+    }
 }

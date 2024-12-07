@@ -5,6 +5,6 @@ public record TurnResponse(
     DateTime StartTime,
     DateTime EndTime,
     int ForeignId,
-    int OfficeId,
+    OfficeResponse Office,
     int PlanId
     );

@@ -74,7 +74,7 @@ public class OfficeController : ApiController
     }
 
 
-    [HttpPut("{id}")]
+    [HttpPatch("{id}")]
     [Authorize(Roles = "SuperAdmin,Admin")]
 
     public async Task<IActionResult> Update(UpdateOfficeQuery request, int id)

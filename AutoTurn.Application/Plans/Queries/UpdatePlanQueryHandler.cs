@@ -27,15 +27,30 @@ namespace AutoTurn.Application.Plans.Commands
             if (plan is null) return Errors.Plan.NotFound;
 
 
-            plan.Name = request.Name ?? plan.Name;
-            plan.Capacity = request.Capacity ?? plan.Capacity;
-            plan.DayBetween =   request.DayBetween ?? plan.DayBetween;
-            plan.CodeType = request.CodeType ?? plan.CodeType;
-            plan.DuarationMinute = request.DuarationMinute ?? plan.DuarationMinute;
-            plan.PlanType = request.PlanType ?? plan.PlanType;
-            plan.MaxDeleteCount = request.MaxDeleteCount ?? plan.MaxDeleteCount;
-            plan.IsTranferAvailable = request.IsTranferAvailable ?? plan.IsTranferAvailable;
+            plan = _mapper.Map<Plan>(request);
 
+
+            if (request.RelatedPlanIds != null)
+            {
+
+                foreach(var relatedPlanInDb in plan.RelatedPlans.ToList())
+                {
+                    if(!request.RelatedPlanIds.Contains(relatedPlanInDb.Id))
+                    {
+                        plan.RelatedPlans.Remove(relatedPlanInDb);
+                    }
+                }
+
+                foreach (int PlanId in request.RelatedPlanIds)
+                {
+                    var relatedPlan = await _planRepository.GetPlanById(PlanId);
+                    if (relatedPlan == null) return Errors.Plan.NotFound;
+                    if (!plan.RelatedPlans.Contains(relatedPlan))
+                    {
+                        plan.RelatedPlans.Add(relatedPlan);
+                    }
+                }
+            }
             await _planRepository.UpdatePlanAsync(plan);
             return plan;
         }

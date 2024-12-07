@@ -20,5 +20,6 @@ public interface ITurnRepository
 
     Task<Turn?> GetTurnByIdAsync(int turnId);
 
+    Task<bool> IsForeignAndPlanExists(int relatedPlanId, int ForeignId);
     Task DeleteTurnAsync(Turn turn);
 }

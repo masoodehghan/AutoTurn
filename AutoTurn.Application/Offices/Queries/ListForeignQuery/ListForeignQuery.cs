@@ -11,5 +11,5 @@ public record ListForeignQuery : IRequest<ErrorOr<List<Foreign>>>
 {
     public PaginationRequest? PageRequest { get; set; }
     [JsonIgnore]
-    public ClaimsPrincipal? AuthUser { get; set; }
+    public ClaimsPrincipal AuthUser { get; set; } = null!;
 }

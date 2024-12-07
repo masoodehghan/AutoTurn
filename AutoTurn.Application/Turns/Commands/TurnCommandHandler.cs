@@ -37,12 +37,14 @@ public class TurnCommandHandler : IRequestHandler<TurnCommand, ErrorOr<Turn>>
 
     public async Task<ErrorOr<Turn>> Handle(TurnCommand request, CancellationToken cancellationToken)
     {
-        string userId = _userManager.GetUserId(request.AuthUser!);
+        string? userId = _userManager.GetUserId(request.AuthUser);
 
         Office office;
         if (!request.AuthUser.IsInRole("Normal"))
         {
-            if (request.OfficeId is null) return Error.Validation(code: "office id required");
+            if (request.OfficeId is null) return Error.Validation(
+                description: "office id required");
+
             office = await _officeRepository.GetOfficeByIdAsyncWithPlan((int)request.OfficeId);
 
             if (office == null) return Errors.Office.NotFound;
@@ -82,12 +84,26 @@ public class TurnCommandHandler : IRequestHandler<TurnCommand, ErrorOr<Turn>>
         }
         catch (Exception ex)
         {
-            return Error.Validation(code: "enter a valid Foreign Code");
+            return Error.Validation(
+                description: "enter a valid Foreign Code." +
+                $" Code type is {plan.CodeType}"
+                );
         }
 
         if (foreign == null) return Error.NotFound(
             description: $"foreign not found code type for this plan is {plan.CodeType.ToString()}"
             );
+
+        if(plan.RelatedPlans.Any())
+        {
+            foreach(var relatedPlan in plan.RelatedPlans)
+            {
+                if(! await _turnRepository.IsForeignAndPlanExists(relatedPlan.Id, foreign.Id))
+                {
+                    return Error.Validation(description: "foreign must have related plan");
+                }
+            }
+        }
 
         var planSetting = office.PlanSettings.Single(s => s.PlanId == request.PlanId);
 

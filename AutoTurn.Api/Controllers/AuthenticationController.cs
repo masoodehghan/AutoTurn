@@ -4,6 +4,7 @@ using AutoTurn.Application.Authentication.Commands;
 using AutoTurn.Application.Authentication.Queries;
 using AutoTurn.Api.Controllers;
 using Microsoft.AspNetCore.Authorization;
+using MapsterMapper;
 
 namespace AutoTurn.Contracts.Controllers;
 
@@ -12,13 +13,15 @@ public class AuthenticationController : ApiController
 {
 
     private readonly ISender _mediatr;
+    private readonly IMapper _mapper;
 
-    public AuthenticationController(ISender mediatr)
+    public AuthenticationController(ISender mediatr, IMapper mapper)
     {
         _mediatr = mediatr;
+        _mapper = mapper;
     }
 
-    
+
     [HttpPost("register")]
     public async Task<IActionResult> Register(RegisterCommand request)
     {
@@ -44,7 +47,7 @@ public class AuthenticationController : ApiController
 
 
     [Authorize("SuperAdmin")]
-    [HttpPut("update")]    
+    [HttpPatch("update")]    
     public async Task<IActionResult> UpdateUser(UpdateUserQuery request)
     {
         request.AuthUser = User;
@@ -54,6 +57,15 @@ public class AuthenticationController : ApiController
             value => Ok(value),
             errors => Problem(errors)
             );
+    }
+
+    [Authorize(Roles ="SuperAdmin")]
+    [HttpGet("users")]
+    public async Task<IActionResult> Users([FromQuery]ListUsersQuery request)
+    {
+        var result = await _mediatr.Send(request);
+
+        return Ok(_mapper.Map<List<UserResponse>>(result));
     }
 }
 

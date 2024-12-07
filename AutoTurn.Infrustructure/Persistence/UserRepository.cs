@@ -1,11 +1,11 @@
 ﻿using AutoTurn.Application.Interfaces.Repository;
+using AutoTurn.Infrastructure.Persistence;
 using AutoTurn.Models;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace AutoTurn.Infrustructure.Persistence
 {
-    public class UserRepository : IUserRepository
+    public class UserRepository : PagedList<User>, IUserRepository
     {
         private readonly AutoTurnDbContext _context;
 
@@ -49,6 +49,15 @@ namespace AutoTurn.Infrustructure.Persistence
         public async  Task<User?> GetUserByUserNameAsync(string userName)
         {
             return await _context.Users.FirstOrDefaultAsync(o => o.UserName == userName);
+        }
+
+        public async Task<ICollection<User>> GetUserListAsync(int PageSize, int PageIndex)
+        {
+            var users = _context.Users
+                .Include(f => f.Office)
+                .Include(f => f.Province);
+
+            return await PageList(users, PageIndex, PageSize).ToListAsync();
         }
     }
 }

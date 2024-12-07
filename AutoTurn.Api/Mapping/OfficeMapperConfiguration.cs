@@ -16,9 +16,12 @@ namespace AutoTurn.Api.Mapping
             config.NewConfig<PlanSetting, PlanSettingResponse>();
             config.NewConfig<User, AdminResponse>();
             config.NewConfig<Turn, TurnResponse>();
+
             config.NewConfig<(PaginationRequest, int?), ListOfficeQuery>()
                 .Map(dest => dest.PageRequest, src => src)
                 .Map(dest => dest.ProvinceId, src => src.Item2);
+
+            config.NewConfig<User, UserResponse>();
 
             config.NewConfig<PaginationRequest, ListForeignQuery>();
 

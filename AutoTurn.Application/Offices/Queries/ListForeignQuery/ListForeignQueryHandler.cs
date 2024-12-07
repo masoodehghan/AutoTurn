@@ -31,6 +31,8 @@ public class ListForeignQueryHandler :
     public async Task<ErrorOr<List<Foreign>>> Handle(ListForeignQuery request, CancellationToken cancellationToken)
     {
         int? OfficeId = null;
+
+
         if(request.AuthUser.IsInRole("Normal"))
         {
             var user = await _userRepository.GetUserByIdAsync(

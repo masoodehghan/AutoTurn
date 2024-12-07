@@ -32,7 +32,7 @@ public class PlanRepository : IPlanRepository
 
     public async Task<Plan?> GetPlanById(int Id)
     {
-        return await _context.Plans.SingleOrDefaultAsync(p => p.Id == Id);
+        return await _context.Plans.Include(f => f.RelatedPlans).SingleOrDefaultAsync(p => p.Id == Id);
     }
 
     public async Task<IEnumerable<Plan>> GetPlansListAsync()

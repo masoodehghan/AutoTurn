@@ -98,6 +98,36 @@
         }
       }
     },
+    "/api/auth/users": {
+      "get": {
+        "tags": [
+          "Authentication"
+        ],
+        "parameters": [
+          {
+            "name": "PageRequest.PageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "PageRequest.PageIndex",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Foreign": {
       "get": {
         "tags": [
@@ -259,7 +289,7 @@
       }
     },
     "/api/Office/{id}": {
-      "put": {
+      "patch": {
         "tags": [
           "Office"
         ],
@@ -869,121 +899,6 @@
         },
         "additionalProperties": false
       },
-      "Claim": {
-        "type": "object",
-        "properties": {
-          "issuer": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "originalIssuer": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "properties": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "subject": {
-            "$ref": "#/components/schemas/ClaimsIdentity"
-          },
-          "type": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "value": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "valueType": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ClaimsIdentity": {
-        "type": "object",
-        "properties": {
-          "authenticationType": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "isAuthenticated": {
-            "type": "boolean",
-            "readOnly": true
-          },
-          "actor": {
-            "$ref": "#/components/schemas/ClaimsIdentity"
-          },
-          "bootstrapContext": {
-            "nullable": true
-          },
-          "claims": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Claim"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "label": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "nameClaimType": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "roleClaimType": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "ClaimsPrincipal": {
-        "type": "object",
-        "properties": {
-          "claims": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Claim"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "identities": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ClaimsIdentity"
-            },
-            "nullable": true,
-            "readOnly": true
-          },
-          "identity": {
-            "$ref": "#/components/schemas/IIdentity"
-          }
-        },
-        "additionalProperties": false
-      },
       "CodeType": {
         "enum": [
           0,
@@ -1000,26 +915,6 @@
       },
       "DeleteTurnQuery": {
         "type": "object",
-        "additionalProperties": false
-      },
-      "IIdentity": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "authenticationType": {
-            "type": "string",
-            "nullable": true,
-            "readOnly": true
-          },
-          "isAuthenticated": {
-            "type": "boolean",
-            "readOnly": true
-          }
-        },
         "additionalProperties": false
       },
       "LoginQuery": {
@@ -1058,9 +953,6 @@
           },
           "address": {
             "$ref": "#/components/schemas/AddressCommand"
-          },
-          "authUser": {
-            "$ref": "#/components/schemas/ClaimsPrincipal"
           }
         },
         "additionalProperties": false
@@ -1264,18 +1156,15 @@
           },
           "maxDeleteCount": {
             "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "format": "int32"
           },
           "dayBetween": {
             "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "format": "int32"
           },
           "duarationMinute": {
             "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "format": "int32"
           },
           "planType": {
             "$ref": "#/components/schemas/PlanType"
@@ -1290,12 +1179,10 @@
           },
           "capacity": {
             "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "format": "int32"
           },
           "isTranferAvailable": {
-            "type": "boolean",
-            "nullable": true
+            "type": "boolean"
           },
           "codeType": {
             "$ref": "#/components/schemas/CodeType"

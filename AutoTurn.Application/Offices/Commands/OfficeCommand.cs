@@ -2,6 +2,7 @@
 using ErrorOr;
 using MediatR;
 using System.Security.Claims;
+using System.Text.Json.Serialization;
 
 namespace AutoTurn.Application.Offices.Commands;
 
@@ -13,6 +14,7 @@ public record OfficeCommand(
     AddressCommand Address
     ) : IRequest<ErrorOr<Office>>
 {
+    [JsonIgnore]
     public ClaimsPrincipal? AuthUser { get; set; }
 }
 

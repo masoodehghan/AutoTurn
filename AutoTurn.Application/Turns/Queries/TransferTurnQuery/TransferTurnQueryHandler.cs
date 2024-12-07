@@ -4,12 +4,6 @@ using AutoTurn.Models.Errors;
 using ErrorOr;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static AutoTurn.Models.Errors.Errors;
 
 namespace AutoTurn.Application.Turns.Queries.TransferTurnQuery;
 

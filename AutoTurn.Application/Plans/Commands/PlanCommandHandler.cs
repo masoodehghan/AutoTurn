@@ -1,5 +1,6 @@
 ﻿using AutoTurn.Application.Interfaces.Repository;
 using AutoTurn.Models;
+using AutoTurn.Models.Errors;
 using ErrorOr;
 using MapsterMapper;
 using MediatR;
@@ -21,6 +22,15 @@ namespace AutoTurn.Application.Plans.Commands
         {
             var plan = _mapper.Map<Plan>(request);
 
+            if(request.RelatedPlanIds is not null)
+            {
+                foreach(int PlanId in request.RelatedPlanIds)
+                {
+                    var relatedPlan = await _planRepository.GetPlanById(PlanId);
+                    if(relatedPlan == null) return Errors.Plan.NotFound;
+                    plan.RelatedPlans.Add(relatedPlan);
+                }
+            }
 
             await _planRepository.AddPlanAsync(plan);
             return plan;

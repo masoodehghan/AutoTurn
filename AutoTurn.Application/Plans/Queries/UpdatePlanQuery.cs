@@ -7,15 +7,15 @@ using System.Text.Json.Serialization;
 
 namespace AutoTurn.Application.Plans.Queries;
 public record UpdatePlanQuery(
-    string? Name,
-    int? MaxDeleteCount,
-    int? DayBetween,
-    int? DuarationMinute,
-    PlanType? PlanType,
-    List<int>? RelatedPlanIds,
-    int? Capacity,
-    bool? IsTranferAvailable,
-    CodeType? CodeType
+    string Name,
+    int MaxDeleteCount,
+    int DayBetween,
+    int DuarationMinute,
+    PlanType PlanType,
+    List<int> RelatedPlanIds,
+    int Capacity,
+    bool IsTranferAvailable,
+    CodeType CodeType
     ):IRequest<ErrorOr<Plan>>
 {
     [JsonIgnore]

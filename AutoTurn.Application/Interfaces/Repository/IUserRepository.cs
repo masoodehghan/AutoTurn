@@ -11,7 +11,7 @@ public interface IUserRepository
     Task<User?> GetUserByIdWithOfficeAsync(string Id);
     Task<User?> GetUserByIdWithPlanAsync(string Id);
 
-
+    Task<ICollection<User>> GetUserListAsync(int PageSize, int PageIndex);
 
 
 }

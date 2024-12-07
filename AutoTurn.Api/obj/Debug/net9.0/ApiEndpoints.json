@@ -48,6 +48,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AutoTurn.Contracts.Controllers.AuthenticationController",
+    "Method": "Users",
+    "RelativePath": "api/auth/users",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PageRequest.PageSize",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "PageRequest.PageIndex",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AutoTurn.Api.Controllers.ForeignController",
     "Method": "Get",
     "RelativePath": "api/Foreign",
@@ -114,7 +135,7 @@
     "ContainingType": "AutoTurn.Api.Controllers.OfficeController",
     "Method": "Update",
     "RelativePath": "api/Office/{id}",
-    "HttpMethod": "PUT",
+    "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
