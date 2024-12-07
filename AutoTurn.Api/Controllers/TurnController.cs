@@ -51,18 +51,6 @@ public class TurnController : ApiController
             );
     }
 
-    [Authorize]
-    [HttpPatch("transfer")]
-    public async Task<IActionResult> TransferTurn(TransferTurnQuery request)
-    {
-        request.AuthUser = User;
-        var result = await _mediatr.Send(request);
-
-        return result.Match(
-            value => Ok(_mapper.Map<TurnResponse>(value)),
-            errors => Problem(errors)
-            );
-    }
 
     [Authorize]
     [HttpDelete("{Id}")]

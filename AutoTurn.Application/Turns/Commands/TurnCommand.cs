@@ -10,6 +10,7 @@ public record TurnCommand(
     string ForeignCode,
     int PlanId,
     int? OfficeId,
+    int? transferOfficeId,
     string ForeignPhoneNumber
     ) : IRequest<ErrorOr<Turn>>
 {

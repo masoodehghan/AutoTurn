@@ -111,7 +111,6 @@ internal class TransferTurnQueryHandler : IRequestHandler<TransferTurnQuery, Err
         }
 
         planSetting.PlanForeignCount++;
-        turn.TranferedOfficeId = office.Id;
         turn.StartTime = start;
         turn.EndTime = end;
 

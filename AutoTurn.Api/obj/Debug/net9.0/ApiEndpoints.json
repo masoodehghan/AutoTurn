@@ -35,7 +35,7 @@
     "ContainingType": "AutoTurn.Contracts.Controllers.AuthenticationController",
     "Method": "UpdateUser",
     "RelativePath": "api/auth/update",
-    "HttpMethod": "PUT",
+    "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -482,22 +482,6 @@
       {
         "Name": "Id",
         "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AutoTurn.Api.Controllers.TurnController",
-    "Method": "TransferTurn",
-    "RelativePath": "api/Turn/transfer",
-    "HttpMethod": "PATCH",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "AutoTurn.Application.Turns.Queries.TransferTurnQuery.TransferTurnQuery",
         "IsRequired": true
       }
     ],

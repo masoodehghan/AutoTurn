@@ -17,7 +17,6 @@ public class Turn :SoftDelete
     public int OfficeId { get; set; }
     public int DeletedCount { get; set; } = 0;
 
-    public int? TranferedOfficeId { get; set; }
-
+    public bool IsTransfered { get; set; } = false;
 
 }

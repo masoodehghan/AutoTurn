@@ -40,6 +40,7 @@ public class TurnCommandHandler : IRequestHandler<TurnCommand, ErrorOr<Turn>>
         string? userId = _userManager.GetUserId(request.AuthUser);
 
         Office office;
+        bool isTransfered = false;
         if (!request.AuthUser.IsInRole("Normal"))
         {
             if (request.OfficeId is null) return Error.Validation(
@@ -48,6 +49,7 @@ public class TurnCommandHandler : IRequestHandler<TurnCommand, ErrorOr<Turn>>
             office = await _officeRepository.GetOfficeByIdAsyncWithPlan((int)request.OfficeId);
 
             if (office == null) return Errors.Office.NotFound;
+
         }
         else
         {
@@ -64,6 +66,18 @@ public class TurnCommandHandler : IRequestHandler<TurnCommand, ErrorOr<Turn>>
         if (!office.Plans.Contains(plan))
         {
             return Error.Validation(code: "office doesent contain this plan");
+        }
+
+
+        if (request.transferOfficeId is not null)
+        {
+            if (plan.IsTranferAvailable == false) return 
+                            Error.Validation("transfer not available");
+
+            office = await _officeRepository.GetOfficeByIdAsync((int)request.transferOfficeId);
+            if (office == null) return Errors.Office.NotFound;
+
+            isTransfered = true;
         }
 
         Foreign? foreign;
@@ -136,18 +150,14 @@ public class TurnCommandHandler : IRequestHandler<TurnCommand, ErrorOr<Turn>>
         if (end.TimeOfDay > TimeOfEnd)
         {
             
-            start = (turns.Last().StartTime.Date == start.Date) 
-                ? start.AddDays(1)
-                : start.AddDays(1).Date + TimeOfStart;
+            start = start.AddDays(1).Date + TimeOfStart;
 
             end = start.AddMinutes(plan.DuarationMinute);
         }
 
         if(start.DayOfWeek == DayOfWeek.Friday)
         {
-            start = (turns.Last().StartTime.Date == start.Date)
-                ? start.AddDays(1)
-                : start.AddDays(1).Date + TimeOfStart;
+            start = start.AddDays(1).Date + TimeOfStart;
 
             end = start.AddMinutes(plan.DuarationMinute);
         }
@@ -165,6 +175,7 @@ public class TurnCommandHandler : IRequestHandler<TurnCommand, ErrorOr<Turn>>
             Foreign = foreign,
             StartTime = start,
             EndTime = end,
+            IsTransfered = isTransfered
         };
 
         try

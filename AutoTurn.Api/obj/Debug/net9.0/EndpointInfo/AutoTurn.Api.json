@@ -68,7 +68,7 @@
       }
     },
     "/api/auth/update": {
-      "put": {
+      "patch": {
         "tags": [
           "Authentication"
         ],
@@ -792,37 +792,6 @@
         }
       }
     },
-    "/api/Turn/transfer": {
-      "patch": {
-        "tags": [
-          "Turn"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TransferTurnQuery"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/TransferTurnQuery"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/TransferTurnQuery"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/Turn/{Id}": {
       "delete": {
         "tags": [
@@ -1088,20 +1057,6 @@
         },
         "additionalProperties": false
       },
-      "TransferTurnQuery": {
-        "type": "object",
-        "properties": {
-          "turnId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "officeId": {
-            "type": "integer",
-            "format": "int32"
-          }
-        },
-        "additionalProperties": false
-      },
       "TurnCommand": {
         "type": "object",
         "properties": {
@@ -1114,6 +1069,11 @@
             "format": "int32"
           },
           "officeId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "transferOfficeId": {
             "type": "integer",
             "format": "int32",
             "nullable": true

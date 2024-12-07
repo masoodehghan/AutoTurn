@@ -18,8 +18,7 @@ public class TurnRepository : PagedList<Turn>, ITurnRepository
         return await _context.Turns
             .Where(
             t => t.OfficeId == officeId &&
-            t.PlanId == planId ||
-            t.TranferedOfficeId == officeId
+            t.PlanId == planId
             )
             .OrderBy(f => f.EndTime).ToListAsync();
     }
@@ -74,7 +73,7 @@ public class TurnRepository : PagedList<Turn>, ITurnRepository
         
         if(IsTransfered is not null)
         {
-            turns = turns.Where(t => t.TranferedOfficeId != null);
+            turns = turns.Where(t => t.IsTransfered == true);
         }
 
         if (OfficeId is not null)
