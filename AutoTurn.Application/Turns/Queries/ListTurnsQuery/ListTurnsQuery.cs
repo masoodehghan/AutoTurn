@@ -19,6 +19,7 @@ public record ListTurnsQuery(
         PaginationRequest? PageRequest
     ) : IRequest<ErrorOr<List<Turn>>>
 {
-    [BindNever]
+    public ListTurnsQuery() : this(null, null, null, null, null, null, null, null)
+    { }
     public ClaimsPrincipal? AuthUser { get; set; }
 }

@@ -164,7 +164,7 @@
         ],
         "parameters": [
           {
-            "name": "ProvinceId",
+            "name": "PageSize",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -172,55 +172,7 @@
             }
           },
           {
-            "name": "ProvinceName",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "AuthUser.Claims",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Claim"
-              }
-            }
-          },
-          {
-            "name": "AuthUser.Identities",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/ClaimsIdentity"
-              }
-            }
-          },
-          {
-            "name": "AuthUser.Identity.Name",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "AuthUser.Identity.AuthenticationType",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "AuthUser.Identity.IsAuthenticated",
-            "in": "query",
-            "schema": {
-              "type": "boolean"
-            }
-          },
-          {
-            "name": "PageRequest.PageSize",
+            "name": "PageIndex",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -228,7 +180,7 @@
             }
           },
           {
-            "name": "PageRequest.PageIndex",
+            "name": "provinceId",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -519,7 +471,7 @@
         ],
         "parameters": [
           {
-            "name": "PageRequest.PageSize",
+            "name": "PageSize",
             "in": "query",
             "schema": {
               "type": "integer",
@@ -527,52 +479,11 @@
             }
           },
           {
-            "name": "PageRequest.PageIndex",
+            "name": "PageIndex",
             "in": "query",
             "schema": {
               "type": "integer",
               "format": "int32"
-            }
-          },
-          {
-            "name": "AuthUser.Claims",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Claim"
-              }
-            }
-          },
-          {
-            "name": "AuthUser.Identities",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/ClaimsIdentity"
-              }
-            }
-          },
-          {
-            "name": "AuthUser.Identity.Name",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "AuthUser.Identity.AuthenticationType",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "AuthUser.Identity.IsAuthenticated",
-            "in": "query",
-            "schema": {
-              "type": "boolean"
             }
           }
         ],
@@ -841,47 +752,6 @@
             "schema": {
               "type": "integer",
               "format": "int32"
-            }
-          },
-          {
-            "name": "AuthUser.Claims",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/Claim"
-              }
-            }
-          },
-          {
-            "name": "AuthUser.Identities",
-            "in": "query",
-            "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/components/schemas/ClaimsIdentity"
-              }
-            }
-          },
-          {
-            "name": "AuthUser.Identity.Name",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "AuthUser.Identity.AuthenticationType",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "AuthUser.Identity.IsAuthenticated",
-            "in": "query",
-            "schema": {
-              "type": "boolean"
             }
           }
         ],
@@ -1463,9 +1333,6 @@
           "isAdmin": {
             "type": "boolean",
             "nullable": true
-          },
-          "authUser": {
-            "$ref": "#/components/schemas/ClaimsPrincipal"
           }
         },
         "additionalProperties": false

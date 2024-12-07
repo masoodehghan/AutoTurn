@@ -2,6 +2,7 @@
 using ErrorOr;
 using MediatR;
 using System.Security.Claims;
+using System.Text.Json.Serialization;
 
 namespace AutoTurn.Application.Authentication.Queries;
 
@@ -17,7 +18,7 @@ public record UpdateUserQuery(
    
     ) : IRequest<ErrorOr<AuthenticationResult>>
 {
-    
+    [JsonIgnore]    
     public ClaimsPrincipal? AuthUser { get; set; }
 }
 

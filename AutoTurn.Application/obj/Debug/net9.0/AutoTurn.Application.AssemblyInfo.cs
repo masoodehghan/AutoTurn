@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AutoTurn.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+172b27ee7ce369ff77db2c2b5c31ff2b258c2932")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57feb0a4842f264fdf423c8d1afe47008a0e7fb7")]
 [assembly: System.Reflection.AssemblyProductAttribute("AutoTurn.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AutoTurn.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -39,10 +39,11 @@ public class TurnController : ApiController
 
     [Authorize]
     [HttpGet]
-    public async Task<IActionResult> Get([FromQuery] ListTurnsQuery request)
+    public async Task<IActionResult> Get([FromQuery] ListTurnRequest request)
     {
-        request.AuthUser = User;
-        var result = await _mediatr.Send(request);
+        var query = _mapper.Map<ListTurnsQuery>(request);
+        query.AuthUser = User;
+        var result = await _mediatr.Send(query);
 
         return result.Match(
             value => Ok(_mapper.Map<List<TurnResponse>>(value)),

@@ -82,6 +82,11 @@ public class TurnRepository : PagedList<Turn>, ITurnRepository
             turns = turns.Where(t => t.OfficeId == OfficeId);   
         }
 
+        if(IsDeleted is not null)
+        {
+            turns = turns.IgnoreQueryFilters().Where(t => t.IsActive == false);
+        }
+
         return  await PageList(turns, PageIndex , PageSize ?? 10).ToListAsync();
     }
 

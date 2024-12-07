@@ -35,7 +35,6 @@ public class OfficeController : ApiController
 
     [HttpPost]
     [Authorize(Roles = "SuperAdmin,Admin")]
-
     public async Task<IActionResult> Post(OfficeCommand request)
     {
         request.AuthUser = User;
@@ -49,12 +48,13 @@ public class OfficeController : ApiController
 
     [HttpGet]
     [Authorize(Roles = "SuperAdmin,Admin")]
-
     public async Task<IActionResult> Get(
-        [FromQuery] ListOfficeQuery request)
+        [FromQuery] PaginationRequest request, int? provinceId)
     {
-        request.AuthUser = User;
-        var result = await _mediatr.Send(request);
+        var query = _mapper.Map<ListOfficeQuery>((request, provinceId));
+        query.AuthUser = User;
+        
+        var result = await _mediatr.Send(query);
 
         return result.Match( 
             value =>  Ok(_mapper.Map<List<OfficeResponse>>(value)),
@@ -174,10 +174,11 @@ public class OfficeController : ApiController
 
     [HttpGet("foreigns")]
     [Authorize]
-    public async Task<IActionResult> GetForeigns([FromQuery]ListForeignQuery request)
+    public async Task<IActionResult> GetForeigns([FromQuery]PaginationRequest request)
     {
-        request.AuthUser = User;
-        var result = await _mediatr.Send(request);
+        var query = _mapper.Map<ListForeignQuery>(request);
+        query.AuthUser = User;
+        var result = await _mediatr.Send(query);
 
         return result.Match(
             value => Ok(value),
