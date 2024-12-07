@@ -1126,29 +1126,10 @@
       },
       "DeleteOfficeQuery": {
         "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "authUser": {
-            "$ref": "#/components/schemas/ClaimsPrincipal"
-          }
-        },
         "additionalProperties": false
       },
       "DeleteTurnQuery": {
         "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "authUser": {
-            "$ref": "#/components/schemas/ClaimsPrincipal"
-          }
-        },
         "additionalProperties": false
       },
       "IIdentity": {
@@ -1232,13 +1213,6 @@
           "capacity": {
             "type": "integer",
             "format": "int32"
-          },
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "authUser": {
-            "$ref": "#/components/schemas/ClaimsPrincipal"
           }
         },
         "additionalProperties": false
@@ -1335,13 +1309,6 @@
           "planId": {
             "type": "integer",
             "format": "int32"
-          },
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "authUser": {
-            "$ref": "#/components/schemas/ClaimsPrincipal"
           }
         },
         "additionalProperties": false
@@ -1355,13 +1322,6 @@
               "type": "string"
             },
             "nullable": true
-          },
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "authUser": {
-            "$ref": "#/components/schemas/ClaimsPrincipal"
           }
         },
         "additionalProperties": false
@@ -1399,9 +1359,6 @@
           "foreignPhoneNumber": {
             "type": "string",
             "nullable": true
-          },
-          "authUser": {
-            "$ref": "#/components/schemas/ClaimsPrincipal"
           }
         },
         "additionalProperties": false
@@ -1424,13 +1381,6 @@
           },
           "address": {
             "$ref": "#/components/schemas/AddressCommand"
-          },
-          "authUser": {
-            "$ref": "#/components/schemas/ClaimsPrincipal"
-          },
-          "id": {
-            "type": "integer",
-            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -1479,10 +1429,6 @@
           },
           "codeType": {
             "$ref": "#/components/schemas/CodeType"
-          },
-          "id": {
-            "type": "integer",
-            "format": "int32"
           }
         },
         "additionalProperties": false

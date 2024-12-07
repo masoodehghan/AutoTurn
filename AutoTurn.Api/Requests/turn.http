@@ -9,7 +9,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "foreignCode": "8277395285857826",
+  "foreignCode": "2321406099623136",
   "officeId": 151,
   "planId": 950,
   "foreignPhoneNumber": "fe"

@@ -2,6 +2,7 @@
 using ErrorOr;
 using MediatR;
 using System.Security.Claims;
+using System.Text.Json.Serialization;
 
 namespace AutoTurn.Application.Offices.Queries.OfficePlanSettingQuery
 {
@@ -12,7 +13,9 @@ namespace AutoTurn.Application.Offices.Queries.OfficePlanSettingQuery
         int Capacity
         ) : IRequest<ErrorOr<Office>>
     {
+        [JsonIgnore]
         public int Id { get; set; }
+        [JsonIgnore]
         public ClaimsPrincipal? AuthUser { get; set; }
     }
 }

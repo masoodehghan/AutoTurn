@@ -3,6 +3,7 @@ using AutoTurn.Models;
 using AutoTurn.Models.Enums;
 using ErrorOr;
 using MediatR;
+using System.Text.Json.Serialization;
 
 namespace AutoTurn.Application.Plans.Queries;
 public record UpdatePlanQuery(
@@ -17,5 +18,6 @@ public record UpdatePlanQuery(
     CodeType? CodeType
     ):IRequest<ErrorOr<Plan>>
 {
+    [JsonIgnore]
     public int Id { get; set; }
 }

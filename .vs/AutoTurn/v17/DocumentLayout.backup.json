@@ -3,32 +3,32 @@
   "WorkspaceRootPath": "F:\\dev\\AutoTurn\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|f:\\dev\\autoturn\\autoturn.application\\turns\\queries\\transferturnquery\\transferturnqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|solutionrelative:autoturn.application\\turns\\queries\\transferturnquery\\transferturnqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|f:\\dev\\autoturn\\autoturn.application\\offices\\queries\\addofficeuserquery\\addofficeuserquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|solutionrelative:autoturn.application\\offices\\queries\\addofficeuserquery\\addofficeuserquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|f:\\dev\\autoturn\\autoturn.application\\turns\\queries\\transferturnquery\\transferturnquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|solutionrelative:autoturn.application\\turns\\queries\\transferturnquery\\transferturnquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|f:\\dev\\autoturn\\autoturn.application\\offices\\queries\\deleteofficequery\\deleteofficequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|solutionrelative:autoturn.application\\offices\\queries\\deleteofficequery\\deleteofficequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D13FB5D6-466C-4567-A50B-7D783FEFD61B}|AutoTurn.Api\\AutoTurn.Api.csproj|f:\\dev\\autoturn\\autoturn.api\\controllers\\turncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D13FB5D6-466C-4567-A50B-7D783FEFD61B}|AutoTurn.Api\\AutoTurn.Api.csproj|solutionrelative:autoturn.api\\controllers\\turncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|f:\\dev\\autoturn\\autoturn.application\\offices\\queries\\getofficequery\\getofficequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|solutionrelative:autoturn.application\\offices\\queries\\getofficequery\\getofficequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D13FB5D6-466C-4567-A50B-7D783FEFD61B}|AutoTurn.Api\\AutoTurn.Api.csproj|f:\\dev\\autoturn\\autoturn.api\\requests\\turn.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{D13FB5D6-466C-4567-A50B-7D783FEFD61B}|AutoTurn.Api\\AutoTurn.Api.csproj|solutionrelative:autoturn.api\\requests\\turn.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+      "AbsoluteMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|f:\\dev\\autoturn\\autoturn.application\\offices\\queries\\listofficequery\\listofficequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|solutionrelative:autoturn.application\\offices\\queries\\listofficequery\\listofficequery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|f:\\dev\\autoturn\\autoturn.application\\turns\\commands\\turncommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|solutionrelative:autoturn.application\\turns\\commands\\turncommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|f:\\dev\\autoturn\\autoturn.application\\offices\\queries\\listofficequery\\listofficequeryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|solutionrelative:autoturn.application\\offices\\queries\\listofficequery\\listofficequeryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D13FB5D6-466C-4567-A50B-7D783FEFD61B}|AutoTurn.Api\\AutoTurn.Api.csproj|f:\\dev\\autoturn\\autoturn.api\\controllers\\foreigncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D13FB5D6-466C-4567-A50B-7D783FEFD61B}|AutoTurn.Api\\AutoTurn.Api.csproj|solutionrelative:autoturn.api\\controllers\\foreigncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|f:\\dev\\autoturn\\autoturn.application\\offices\\queries\\listforeignquery\\listforeignquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|solutionrelative:autoturn.application\\offices\\queries\\listforeignquery\\listforeignquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D13FB5D6-466C-4567-A50B-7D783FEFD61B}|AutoTurn.Api\\AutoTurn.Api.csproj|f:\\dev\\autoturn\\autoturn.api\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D13FB5D6-466C-4567-A50B-7D783FEFD61B}|AutoTurn.Api\\AutoTurn.Api.csproj|solutionrelative:autoturn.api\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|f:\\dev\\autoturn\\autoturn.application\\offices\\queries\\officeplansettingquery\\officeplansettingquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B75B4177-801F-4F76-968B-475615315F49}|AutoTurn.Application\\AutoTurn.Application.csproj|solutionrelative:autoturn.application\\offices\\queries\\officeplansettingquery\\officeplansettingquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +38,101 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddOfficeUserQuery.cs",
+              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\AddOfficeUserQuery\\AddOfficeUserQuery.cs",
+              "RelativeDocumentMoniker": "AutoTurn.Application\\Offices\\Queries\\AddOfficeUserQuery\\AddOfficeUserQuery.cs",
+              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\AddOfficeUserQuery\\AddOfficeUserQuery.cs",
+              "RelativeToolTip": "AutoTurn.Application\\Offices\\Queries\\AddOfficeUserQuery\\AddOfficeUserQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T05:33:19.037Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TransferTurnQuery.cs",
-              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Turns\\Queries\\TransferTurnQuery\\TransferTurnQuery.cs",
-              "RelativeDocumentMoniker": "AutoTurn.Application\\Turns\\Queries\\TransferTurnQuery\\TransferTurnQuery.cs",
-              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Turns\\Queries\\TransferTurnQuery\\TransferTurnQuery.cs",
-              "RelativeToolTip": "AutoTurn.Application\\Turns\\Queries\\TransferTurnQuery\\TransferTurnQuery.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAIAxwBIAAAAQAAAAAAAAAA==",
+              "Title": "DeleteOfficeQuery.cs",
+              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\DeleteOfficeQuery\\DeleteOfficeQuery.cs",
+              "RelativeDocumentMoniker": "AutoTurn.Application\\Offices\\Queries\\DeleteOfficeQuery\\DeleteOfficeQuery.cs",
+              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\DeleteOfficeQuery\\DeleteOfficeQuery.cs",
+              "RelativeToolTip": "AutoTurn.Application\\Offices\\Queries\\DeleteOfficeQuery\\DeleteOfficeQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T05:15:46.351Z",
+              "WhenOpened": "2024-12-07T05:32:51.815Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "TurnController.cs",
-              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Api\\Controllers\\TurnController.cs",
-              "RelativeDocumentMoniker": "AutoTurn.Api\\Controllers\\TurnController.cs",
-              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Api\\Controllers\\TurnController.cs",
-              "RelativeToolTip": "AutoTurn.Api\\Controllers\\TurnController.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAywDYAAABDAAAAAAAAAA==",
+              "Title": "GetOfficeQuery.cs",
+              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\GetOfficeQuery\\GetOfficeQuery.cs",
+              "RelativeDocumentMoniker": "AutoTurn.Application\\Offices\\Queries\\GetOfficeQuery\\GetOfficeQuery.cs",
+              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\GetOfficeQuery\\GetOfficeQuery.cs",
+              "RelativeToolTip": "AutoTurn.Application\\Offices\\Queries\\GetOfficeQuery\\GetOfficeQuery.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAYwBEAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T05:08:44.749Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "turn.http",
-              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Api\\Requests\\turn.http",
-              "RelativeDocumentMoniker": "AutoTurn.Api\\Requests\\turn.http",
-              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Api\\Requests\\turn.http",
-              "RelativeToolTip": "AutoTurn.Api\\Requests\\turn.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAACxAQAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-12-07T05:04:37.895Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TurnCommandHandler.cs",
-              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Turns\\Commands\\TurnCommandHandler.cs",
-              "RelativeDocumentMoniker": "AutoTurn.Application\\Turns\\Commands\\TurnCommandHandler.cs",
-              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Turns\\Commands\\TurnCommandHandler.cs",
-              "RelativeToolTip": "AutoTurn.Application\\Turns\\Commands\\TurnCommandHandler.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAywHcAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T04:44:50.303Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TransferTurnQueryHandler.cs",
-              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Turns\\Queries\\TransferTurnQuery\\TransferTurnQueryHandler.cs",
-              "RelativeDocumentMoniker": "AutoTurn.Application\\Turns\\Queries\\TransferTurnQuery\\TransferTurnQueryHandler.cs",
-              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Turns\\Queries\\TransferTurnQuery\\TransferTurnQueryHandler.cs",
-              "RelativeToolTip": "AutoTurn.Application\\Turns\\Queries\\TransferTurnQuery\\TransferTurnQueryHandler.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAowCQAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T04:44:50.32Z",
+              "WhenOpened": "2024-12-07T05:32:16.64Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "ForeignController.cs",
-              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Api\\Controllers\\ForeignController.cs",
-              "RelativeDocumentMoniker": "AutoTurn.Api\\Controllers\\ForeignController.cs",
-              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Api\\Controllers\\ForeignController.cs",
-              "RelativeToolTip": "AutoTurn.Api\\Controllers\\ForeignController.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAABoAAABWAAAAAAAAAA==",
+              "Title": "ListForeignQuery.cs",
+              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\ListForeignQuery\\ListForeignQuery.cs",
+              "RelativeDocumentMoniker": "AutoTurn.Application\\Offices\\Queries\\ListForeignQuery\\ListForeignQuery.cs",
+              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\ListForeignQuery\\ListForeignQuery.cs",
+              "RelativeToolTip": "AutoTurn.Application\\Offices\\Queries\\ListForeignQuery\\ListForeignQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T04:49:23.079Z",
+              "WhenOpened": "2024-12-07T05:32:00.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ListOfficeQuery.cs",
+              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\ListOfficeQuery\\ListOfficeQuery.cs",
+              "RelativeDocumentMoniker": "AutoTurn.Application\\Offices\\Queries\\ListOfficeQuery\\ListOfficeQuery.cs",
+              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\ListOfficeQuery\\ListOfficeQuery.cs",
+              "RelativeToolTip": "AutoTurn.Application\\Offices\\Queries\\ListOfficeQuery\\ListOfficeQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T05:31:37.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ListOfficeQueryHandler.cs",
+              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\ListOfficeQuery\\ListOfficeQueryHandler.cs",
+              "RelativeDocumentMoniker": "AutoTurn.Application\\Offices\\Queries\\ListOfficeQuery\\ListOfficeQueryHandler.cs",
+              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\ListOfficeQuery\\ListOfficeQueryHandler.cs",
+              "RelativeToolTip": "AutoTurn.Application\\Offices\\Queries\\ListOfficeQuery\\ListOfficeQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-07T05:31:36.385Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "AuthenticationController.cs",
-              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Api\\Controllers\\AuthenticationController.cs",
-              "RelativeDocumentMoniker": "AutoTurn.Api\\Controllers\\AuthenticationController.cs",
-              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Api\\Controllers\\AuthenticationController.cs",
-              "RelativeToolTip": "AutoTurn.Api\\Controllers\\AuthenticationController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "OfficePlanSettingQuery.cs",
+              "DocumentMoniker": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\OfficePlanSettingQuery\\OfficePlanSettingQuery.cs",
+              "RelativeDocumentMoniker": "AutoTurn.Application\\Offices\\Queries\\OfficePlanSettingQuery\\OfficePlanSettingQuery.cs",
+              "ToolTip": "F:\\dev\\AutoTurn\\AutoTurn.Application\\Offices\\Queries\\OfficePlanSettingQuery\\OfficePlanSettingQuery.cs",
+              "RelativeToolTip": "AutoTurn.Application\\Offices\\Queries\\OfficePlanSettingQuery\\OfficePlanSettingQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T04:49:22.079Z",
+              "WhenOpened": "2024-12-07T05:31:23.109Z",
               "EditorCaption": ""
             }
           ]

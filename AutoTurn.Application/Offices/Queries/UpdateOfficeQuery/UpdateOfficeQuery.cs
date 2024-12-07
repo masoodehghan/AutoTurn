@@ -4,6 +4,7 @@ using AutoTurn.Models;
 using ErrorOr;
 using MediatR;
 using System.Security.Claims;
+using System.Text.Json.Serialization;
 
 namespace AutoTurn.Application.Offices.Queries.UpdateOfficeQuery;
 
@@ -13,7 +14,9 @@ string Name,
 int? ProvinceId,
 AddressCommand Address) : IRequest<ErrorOr<Office>>
 {
+    [JsonIgnore]
     public ClaimsPrincipal? AuthUser { get; set; }
+    [JsonIgnore]
     public int Id { get; set; } = 0;
 }
 
