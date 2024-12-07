@@ -922,6 +922,14 @@
           },
           "address": {
             "$ref": "#/components/schemas/AddressCommand"
+          },
+          "daysOff": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1099,6 +1107,14 @@
           "provinceId": {
             "type": "integer",
             "format": "int32",
+            "nullable": true
+          },
+          "daysOff": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date"
+            },
             "nullable": true
           },
           "address": {

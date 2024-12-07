@@ -11,7 +11,8 @@ public record OfficeCommand(
     string? AdminId,
     string Name,
     int? ProvinceId,
-    AddressCommand Address
+    AddressCommand Address,
+    List<DateOnly> DaysOff
     ) : IRequest<ErrorOr<Office>>
 {
     [JsonIgnore]

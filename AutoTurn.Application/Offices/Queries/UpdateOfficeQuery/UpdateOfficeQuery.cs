@@ -12,6 +12,7 @@ public record UpdateOfficeQuery(
 string? AdminId,
 string Name,
 int? ProvinceId,
+List<DateOnly>? DaysOff,
 AddressCommand Address) : IRequest<ErrorOr<Office>>
 {
     [JsonIgnore]

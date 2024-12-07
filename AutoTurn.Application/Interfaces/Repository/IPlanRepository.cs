@@ -13,7 +13,7 @@ namespace AutoTurn.Application.Interfaces.Repository
         Task UpdatePlanAsync(Plan plan);
 
         Task<Plan?> GetPlanById(int Id);
-        Task<IEnumerable<Plan>> GetPlansListAsync(); 
+        Task<IEnumerable<Plan>> GetPlansListAsync(int PageSize, int PageIndex); 
         Task DeletePlanAsync(Plan plan);
     }
 }

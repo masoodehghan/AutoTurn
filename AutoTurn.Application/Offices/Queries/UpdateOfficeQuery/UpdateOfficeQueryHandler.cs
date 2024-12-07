@@ -42,6 +42,21 @@ public class UpdateOfficeQueryHandler : IRequestHandler<UpdateOfficeQuery, Error
         office.Address.Street = request.Address.Street;
         office.Address.PostalCode = request.Address.PostalCode;
 
+        if(request.DaysOff is not null)
+        {
+            foreach(var dayInDb in office.DaysOff)
+            {
+                if(!request.DaysOff.Contains(dayInDb))
+                {
+                    office.DaysOff.Remove(dayInDb);
+                }
+                foreach (var day in request.DaysOff)
+                {
+                    office.DaysOff.Add(day);
+                }
+            }
+        }
+
         await _officeRepository.SaveChangesAsync();
 
         return office;

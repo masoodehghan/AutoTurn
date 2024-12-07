@@ -1,6 +1,7 @@
 ﻿using AutoTurn.Application.Interfaces.Repository;
 using AutoTurn.Application.Plans.Commands;
 using AutoTurn.Application.Plans.Queries;
+using AutoTurn.Contracts;
 using AutoTurn.Models.Errors;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
@@ -46,7 +47,7 @@ namespace AutoTurn.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> Get([FromQuery]PaginationRequest request)
         {
             return Ok(await _planRepository.GetPlansListAsync());
         }

@@ -71,7 +71,7 @@ public class TurnCommandHandler : IRequestHandler<TurnCommand, ErrorOr<Turn>>
 
         if (request.transferOfficeId is not null)
         {
-            if (plan.IsTranferAvailable == false) return 
+            if (plan.IsTranferAvailable == false) return
                             Error.Validation("transfer not available");
 
             office = await _officeRepository.GetOfficeByIdAsync((int)request.transferOfficeId);
@@ -108,11 +108,11 @@ public class TurnCommandHandler : IRequestHandler<TurnCommand, ErrorOr<Turn>>
             description: $"foreign not found code type for this plan is {plan.CodeType.ToString()}"
             );
 
-        if(plan.RelatedPlans.Any())
+        if (plan.RelatedPlans.Any())
         {
-            foreach(var relatedPlan in plan.RelatedPlans)
+            foreach (var relatedPlan in plan.RelatedPlans)
             {
-                if(! await _turnRepository.IsForeignAndPlanExists(relatedPlan.Id, foreign.Id))
+                if (!await _turnRepository.IsForeignAndPlanExists(relatedPlan.Id, foreign.Id))
                 {
                     return Error.Validation(description: "foreign must have related plan");
                 }
@@ -149,16 +149,19 @@ public class TurnCommandHandler : IRequestHandler<TurnCommand, ErrorOr<Turn>>
 
         if (end.TimeOfDay > TimeOfEnd)
         {
-            
             start = start.AddDays(1).Date + TimeOfStart;
-
             end = start.AddMinutes(plan.DuarationMinute);
+        }
+
+        while (office.DaysOff.Contains(DateOnly.FromDateTime(start)))
+        {
+            start = start.AddDays(1).Date + TimeOfStart;
+            end = start.AddDays(plan.DuarationMinute);
         }
 
         if(start.DayOfWeek == DayOfWeek.Friday)
         {
             start = start.AddDays(1).Date + TimeOfStart;
-
             end = start.AddMinutes(plan.DuarationMinute);
         }
         if(planSetting.PlanCapacity <= planSetting.PlanForeignCount)

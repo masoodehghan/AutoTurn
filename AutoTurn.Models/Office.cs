@@ -28,6 +28,6 @@ public class Office : SoftDelete
 
     public ICollection<Turn> Turns { get; } = new List<Turn>();
     public ICollection<PlanSetting> PlanSettings { get; set; } = new HashSet<PlanSetting>();
-
-}
+    public List<DateOnly> DaysOff { get; set; } = new();
+ }
 

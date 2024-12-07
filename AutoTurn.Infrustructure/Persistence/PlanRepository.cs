@@ -1,4 +1,5 @@
 ﻿using AutoTurn.Application.Interfaces.Repository;
+using AutoTurn.Infrastructure.Persistence;
 using AutoTurn.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace AutoTurn.Infrustructure.Persistence;
 
-public class PlanRepository : IPlanRepository
+public class PlanRepository : PagedList<Plan>, IPlanRepository
 {
     private readonly AutoTurnDbContext _context;
 
@@ -35,10 +36,10 @@ public class PlanRepository : IPlanRepository
         return await _context.Plans.Include(f => f.RelatedPlans).SingleOrDefaultAsync(p => p.Id == Id);
     }
 
-    public async Task<IEnumerable<Plan>> GetPlansListAsync()
+    public async Task<IEnumerable<Plan>> GetPlansListAsync(int PageSize, int PageIndex)
     {
 
-        return await _context.Plans.ToListAsync();
+        return await PageList(_context.Plans, PageIndex, PageSize).ToListAsync();
     }
 
     public async Task UpdatePlanAsync(Plan plan)

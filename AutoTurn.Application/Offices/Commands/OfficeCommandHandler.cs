@@ -66,7 +66,8 @@ public class OfficeCommandHandler : IRequestHandler<OfficeCommand, ErrorOr<Offic
         {
             Id = request.Id,
             Name = request.Name,
-            ProvinceId = provinceId
+            ProvinceId = provinceId,
+            DaysOff = request.DaysOff,
         };
 
         office.Address = address;

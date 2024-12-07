@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AutoTurn.Contracts")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7b9a47f6fd64ffa795489b1456b81f6ae88924a9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4485b468b950760a40273ca2483fbdf93943e542")]
 [assembly: System.Reflection.AssemblyProductAttribute("AutoTurn.Contracts")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AutoTurn.Contracts")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
